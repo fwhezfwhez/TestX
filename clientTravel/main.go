@@ -16,7 +16,12 @@ func main(){
 	//CountVisitor()
 
 	//测试西瓜
-	WaterMelon()
+	//WaterMelon()
+
+	//获取令牌
+	//Login()
+	//测试下载
+	DownLoad()
 }
 func FilInfo(){
 	t1 := time.Now()
@@ -36,6 +41,37 @@ func CountVisitor(){
 	t2 := time.Now()
 	fmt.Println(t2.Sub(t1))
 	if err!=nil {
+		panic(err)
+	}
+	helpRead(resp)
+}
+
+func Login(){
+	t1 := time.Now()
+	var content  = fmt.Sprintf("userName=邹梦君&password=123456")
+	resp, err := http.Post("http://localhost:8087/login", "application/x-www-form-urlencoded", strings.NewReader(content))
+	t2 := time.Now()
+	fmt.Println(t2.Sub(t1))
+	if err!=nil {
+		panic(err)
+	}
+	helpRead(resp)
+}
+func DownLoad(){
+	t1 := time.Now()
+
+	//resp, err := http.Get(host + "v1/GET/mediums/list")
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", "http://localhost:8087/download",nil)
+	cookie := &http.Cookie{}
+	cookie.Name="Authorization"
+	cookie.Value="eyJleHAiOiIxNTIyNzU4NTk1In0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.PF0wTZle+7H5If/BQRLXTp7KEtb/Td3z/S2A7MgNH2Y="
+	req.AddCookie(cookie)
+	//req.Header.Add("Authorization", "eyJleHAiOiIxNTIyNzU2MjY5In0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XWdffWT+ceF0tiGUj7ldbg+EoWOx6vlTsoCZnq0sODg=")
+	resp, err := client.Do(req)
+	t2 := time.Now()
+	fmt.Println(t2.Sub(t1))
+	if err != nil {
 		panic(err)
 	}
 	helpRead(resp)

@@ -26,4 +26,16 @@ func main() {
 	dataTimeStr2 := time.Unix(timestamp2, 0).Local().Format(startTime)
 	fmt.Println(dataTimeStr1)
 	fmt.Println(dataTimeStr2)
+
+	//前一天
+	d,_:=time.ParseDuration("-24h")
+	fmt.Println(time.Now().Add(d).Format("2006-01-02"))
+
+	m:=make(map[int]int,3)
+	//m[1]=5
+	fmt.Println(len(m))
+	//m[2]=8
+	//m[3]=9
+	//m[4]=0
+	//fmt.Println(cap(m))
 }

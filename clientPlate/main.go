@@ -266,7 +266,7 @@ func MediumList() {
 		//resp, err := http.Get(host + "v1/GET/mediums/list")
 		client := &http.Client{}
 		req, err := http.NewRequest("GET", "http://localhost:8087/v1/GET/mediums/list",nil)
-		req.Header.Add("Authorization", "eyJleHAiOiIxNTIyMzg2MTg4Iiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.tXfDQ8SVsQFT1YYUU0zOKPcgolK3s7vna6yuKI715Oo=")
+		req.Header.Add("Authorization", "eyJleHAiOiIxNTIyNzM3ODAyIiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.rth6KpoYVM66oDcn7X3jXmHEbSzyPHpbIXqN7bpqyzQ=")
 		resp, err := client.Do(req)
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))

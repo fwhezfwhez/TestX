@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"crypto/md5"
 	"bytes"
+	"bufio"
 )
 
 const (
@@ -39,6 +40,7 @@ func main(){
    buf.WriteString("1234")
 	buf.WriteString("12354")
    fmt.Println(buf.String())
+
 
    fmt.Println(k1)
 

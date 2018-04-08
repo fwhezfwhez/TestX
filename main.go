@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go/types"
 	"container/list"
+	"time"
 )
 type User struct{}
 func main() {
@@ -23,6 +24,12 @@ func main() {
    l.Remove(e)
 	l.Remove(e)
   fmt.Println(l.Len())
+
+  fmt.Println(time.Now().Day())
+
+  var c = make([]string,0,10)
+  c[1]="5"
+
 }
 
 func te(dest interface{}){
