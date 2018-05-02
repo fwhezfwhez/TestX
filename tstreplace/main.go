@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"runtime"
+	"strings"
 )
 
 type Error struct {
@@ -30,6 +31,9 @@ func (err *Error) String() string{
 }
 
 func main(){
+	a2 :=strings.Split("dsfa,",",")
+	fmt.Println(a2)
+
 	var a = make(map[string]interface{})
 	aq,ok:=a["d"]
 	fmt.Println(aq,ok)

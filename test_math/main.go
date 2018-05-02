@@ -20,4 +20,7 @@ func main() {
 	fmt.Println(math.Cbrt(27))
 
 	fmt.Println(math.Sin(math.Pi))
+
+	fmt.Println(5/2)
+	fmt.Println(math.Pow(4,2))
 }

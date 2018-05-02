@@ -6,15 +6,38 @@ import (
 	"strings"
 )
 
+type Rule interface{
+	InitDefault()
+}
+
 type User struct {
 	Id   string
 	Name string
 	Age string	`Fuck:"kit"`
 }
+func (u User) InitDefault(){
 
+}
+func do(in interface{}){
+	_v:= reflect.ValueOf(&in)
+	fmt.Println(_v.CanSet())
+	_v = _v.Elem()
+	fmt.Println(_v.CanSet())
+	_v.Field(0).SetString("6")
+	fmt.Println(in)
+}
 func main() {
 	user := User{"5","ft","32"}
-	fmt.Println(user)
+
+	do(&user)
+	//_v:= reflect.ValueOf(&user)
+	//fmt.Println(_v.CanSet())
+	//_v = _v.Elem()
+	//fmt.Println(_v.CanSet())
+	//_v.Field(0).SetString("6")
+	//fmt.Println(user)
+
+
 
 
 	value :=reflect.ValueOf (user)
@@ -27,14 +50,17 @@ func main() {
 	//valueStr :=value.String()
 	//fmt.Println(valueStr)
 	//
-	//v2 :=value.Field(0)
-	//fmt.Println(v2)
-	//
+	v2 :=value.Field(0)
+	fmt.Println(v2)
+
+
 	_type :=reflect.TypeOf(user)
 	fmt.Println(_type)
 
 	 var tagValue =_type.Field(2).Tag.Get("Fuck")
 	 fmt.Println(tagValue)
+
+	 fmt.Println("kk:",_type.Field(2))
 	//type_len :=_type.NumField()
 	//fmt.Println(type_len)
 	//

@@ -16,16 +16,20 @@ func main() {
 	fmt.Println(timestampInt64)
 
 	//将字符串转换成时间戳
-	Time, _ := time.ParseInLocation(startTime, "2018-03-19 14:55:44",time.Local)
+	Time, _ := time.ParseInLocation("2006/01/02", "2018/03/19",time.Local)
 	timestamp := Time.Unix()
-	fmt.Println(timestamp)
+	fmt.Println("k:",Time)
 
+	//时间类型精度修改
+	//Local循环不影响, 即可以认为Local和Unix方式存储的空间对象是同一个，不管如何Local Unix都指代一个，不会出现多次-8h
+	t3:=Time.Local().Local().Local()
+	fmt.Println("Time:",t3.Format(startTime))
 	timestamp2:=time.Now().Unix()
 	//将时间戳转变成时间
 	dataTimeStr1 := time.Unix(timestamp, 0).Local().Format(startTime)
 	dataTimeStr2 := time.Unix(timestamp2, 0).Local().Format(startTime)
 	fmt.Println(dataTimeStr1)
-	fmt.Println(dataTimeStr2)
+	fmt.Println("now:",dataTimeStr2)
 
 	//前一天
 	d,_:=time.ParseDuration("-24h")
@@ -38,4 +42,6 @@ func main() {
 	//m[3]=9
 	//m[4]=0
 	//fmt.Println(cap(m))
+
+	fmt.Println(time.Now().UnixNano()/1e3)
 }

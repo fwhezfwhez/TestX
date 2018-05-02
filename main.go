@@ -5,13 +5,19 @@ import (
 	"go/types"
 	"container/list"
 	"time"
+	"runtime"
+
 )
-type User struct{}
+type User struct{
+	Name string
+}
 func main() {
-  var  users = make([]User,0)
-   var user = User{}
-   te(user)
-   te(users)
+  var  users = make(map[string]User,0)
+   var user = User{"ft"}
+   //te(user)
+   //te(users)
+   users["1"] = user
+   fmt.Println(users["1"].Name)
 
    m:=make(map[string]string,5000)
   // m["d"]="f"
@@ -27,9 +33,26 @@ func main() {
 
   fmt.Println(time.Now().Day())
 
-  var c = make([]string,0,10)
-  c[1]="5"
 
+  fmt.Println(runtime.NumCPU())
+  pre := runtime.GOMAXPROCS(runtime.NumCPU())
+  fmt.Println(pre,runtime.NumCPU())
+
+  ms:=make(map[int]*User,0)
+  ms[1]= &user
+  fmt.Println(len(ms))
+  ms[1]=nil
+  fmt.Println(len(ms))
+  fmt.Println(ms[1])
+
+  var i=5
+  switch i {
+  case 5:
+  	fmt.Println(1)
+  	fmt.Println(2)
+  case 3:
+  	fmt.Println(3)
+  }
 }
 
 func te(dest interface{}){
@@ -41,4 +64,5 @@ func te(dest interface{}){
 	default:
 		fmt.Println("都不是")
 	}
+
 }
