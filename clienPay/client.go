@@ -10,14 +10,17 @@ import (
 	"encoding/xml"
 )
 
-var host = "http://localhost:8077"
-//var host ="https://market.qinglong365.com"
+//var host = "http://10.0.203.92:8077"
+var host ="https://market.qinglong365.com"
 var maxIn int = 1
 var resps []*http.Response = make([]*http.Response, 0)
 var errs []error = make([]error, 0)
 
-var client = &http.Client{}
-
+//var tr = &http.Transport{
+//ResponseHeaderTimeout:6*time.Second,
+//}
+var client = &http.Client{
+}
 type Order struct {
 	Cid       string `json:"cid" form:"cid" superChecker:"cid"`
 	Pversion  string `json:"pversion" form:"pversion" superChecker:"pversion"`
@@ -29,6 +32,9 @@ type Order struct {
 	TravelDate string `json:"travel_date" form:"travel_date" superChecker:"travel_date"`
 	AppType string `json:"app_type" form:"app_type" superChecker:"app_type"`
 	Num string `json:"num" form:"num" superChecker:"num"`
+	OpenBy string `json:"open_by" form:"open_by"`
+	UserId string `json:"zonst_user_id" form:"zonst_user_id"`
+	Addr     string  `json:"addr" from:"addr"`
 }
 
 type UpdateOrder struct {
@@ -71,26 +77,99 @@ type NotifyResult struct {
 	TimeEnd          string   `xml:"time_end"`
 }
 
+var token = "eyJleHAiOiIxNTI2MjY3NTEwIiwicm9sZUlkIjoiMyIsInVzZXJuYW1lIjoiNDcyNjczMzdAcXEuY29tIn0=.e30=.GFge05gHTRsdtBL9JFqtgmrJ5RNQxHGkNZwDpBRZZNg="
 func main() {
 	fmt.Println(GetDuration(func() {
-		//测试订单列表
-		// TestOrderList()
+//eyJleHAiOiIxNTI1NjkyMzQ4Iiwicm9sZUlkIjoiNCIsInVzZXJuYW1lIjoiMTcyODU2NTQ4NEBxcS5jb20ifQ==.e30=.6cycPkhFfzgHuj9oLqfclaOWbOWeFuH9X9lYQb4DlME=
 		//测试错误代码查询
 		//TestErrorCode()
 		//测试订单插入
-		//TestOrderInsert()
+		//TestOpenId()
+		TestOrderInsert()
 		//测试订单更新
 		//TestOrderUpdate()
 		//测试log
 		//TestLog()
-
-		//
 		//测试notify
-		TestNotify()
+		//TestNotify()
+		//测试登陆
+		//TestLogin()
+		//测试订单列表
+		//TestOrderList()
+		//测试产品map
+		//TestProductMap()
+
+		//获取fee
+		//TestFee()
+
+
 	}))
 }
 
+func TestOpenId(){
+	//https://market.qinglong365.com/v1/GET/VXPub/GetOpenId
+	url := host+"/v1/GET/VXPub/GetOpenId/?code=testcode&state=D201805141526281549239883"
+	fmt.Println(url)
+	req,er:=http.NewRequest("GET",host+"/v1/GET/VXPub/GetOpenId/?code=testcode&state=D201805141526281549239883",nil)
+	if er!=nil {
+		panic(er.Error())
+	}
+	resp,er:=client.Do(req)
+	if er!=nil {
+		panic(er.Error())
+	}
+	helpRead(resp)
+}
 
+func TestFee(){
+	req,er:=http.NewRequest("GET",host+"/v1/GET/TotalFee?product_id=1001&start_time=2018-05-11&end_time=2018-05-11",nil)
+	if er!=nil {
+		panic(er.Error())
+	}
+	req.Header.Set("Authorization",token)
+	resp,er:=client.Do(req)
+	if er!=nil {
+		panic(er.Error())
+	}
+	helpRead(resp)
+}
+func TestProductMap(){
+	req,er:=http.NewRequest("GET",host+"/v1/GET/productMap",nil)
+	if er!=nil {
+		panic(er.Error())
+	}
+	req.Header.Set("Authorization",token)
+	resp,er:=client.Do(req)
+	if er!=nil {
+		panic(er.Error())
+	}
+	helpRead(resp)
+}
+
+func TestLogin(){
+	type User struct{
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
+	user :=User{"47267337@qq.com","123456"}
+	usJs,er := json.Marshal(user)
+	if er!=nil {
+		fmt.Println(er.Error())
+		return
+	}
+	req,er:=http.NewRequest("POST",host+"/v1/POST/adsLogin",bytes.NewReader(usJs))
+	req.Header.Set("Content-Type","application/json")
+	if er!=nil{
+		fmt.Println(er.Error())
+		return
+	}
+	resp,er:=client.Do(req)
+	if er!=nil{
+		fmt.Println(er.Error())
+		return
+	}
+	helpRead(resp)
+}
 func TestNotify(){
 	notice := NotifyResult{
 		Version:"2.0",
@@ -155,25 +234,23 @@ func TestOrderList() {
 
 	//resp, err := http.Get(host + "v1/GET/mediums/list")
 
-	req, err := http.NewRequest("GET", host+"/v1/GET/order/list?pagesize=20&pageindex=1&orderby=ttime&asc=false&cid=20030&orderid=201804131523591808&uname=石勇&pversion=v1.0&paystatus=1&orderstatus=1", nil)
+	//req, err := http.NewRequest("GET", host+"/v1/GET/order/list_withToken?productId=1001&page_size=20&page_index=2", nil)
+	req, err := http.NewRequest("GET", host+"/v1/GET/order/list?order_id=D201805251527256369645149", nil)
 	//cookie := &http.Cookie{}
 	//cookie.Name="Authorization"
 	//cookie.Value="eyJleHAiOiIxNTIyNzU4NTk1In0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.PF0wTZle+7H5If/BQRLXTp7KEtb/Td3z/S2A7MgNH2Y="
 	//req.AddCookie(cookie)
-	//req.Header.Add("Authorization", "eyJleHAiOiIxNTIyNzU2MjY5In0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XWdffWT+ceF0tiGUj7ldbg+EoWOx6vlTsoCZnq0sODg=")
+	req.Header.Add("Authorization", token)
 
 	t1 := time.Now()
 	var resp *http.Response
 	var err2 error
-	for i := 0; i < maxIn; i++ {
 		resp, err2 = client.Do(req)
-
 		if err2 != nil {
-			errs = append(errs, err2)
-			continue
+			fmt.Println(err2.Error())
+			return
 		}
 		resps = append(resps, resp)
-	}
 	t2 := time.Now()
 	totalTime := t2.Sub(t1)
 	aveTime := totalTime / time.Duration(maxIn)
@@ -208,11 +285,14 @@ func TestOrderInsert() {
 		Uname : "石勇,张三,赵四",
 		Money : "10080",
 		BillType : "1",
-		ProductId :"1002",
-		TravelDate :"2018-05-24",
+		ProductId :"1005",
+		//TravelDate :"2018-05-24",
 		Num : "3",
 		AppType : "1",
-	}
+		OpenBy:"2",
+		UserId:"1111",
+		Addr:"江西南昌",
+		}
 
 
 	buf, err := json.Marshal(orderNew)
@@ -235,7 +315,17 @@ func TestOrderInsert() {
 		fmt.Println(err2)
 		return
 	}
-	helpRead(resp)
+	type Rs struct{
+		Status int `json:"status"`
+		Msg string `json:"msg"`
+		Data interface{} `json:"data"`
+	}
+	buf,_=ioutil.ReadAll(resp.Body)
+	var rs = Rs{}
+	json.Unmarshal(buf,&rs)
+	fmt.Println(rs)
+	defer resp.Body.Close()
+
 	fmt.Println(duration)
 }
 
@@ -243,11 +333,12 @@ func TestOrderUpdate() {
 	var resp *http.Response
 	var er error
 	updateOrder := UpdateOrder{}
-	updateOrder.OrderId = "D201804261524715488722806"
+	updateOrder.OrderId = "D201805101525929269530502"
 	updateOrder.OrderStatus = "2"
 	uojs, _ := json.Marshal(updateOrder)
 	req, err := http.NewRequest("POST", host+"/v1/POST/order/modify", bytes.NewReader(uojs))
 	req.Header.Set("Content-Type", "application/json")
+	req.Header.Add("Authorization", token)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -260,7 +351,7 @@ func TestOrderUpdate() {
 }
 
 func TestLog() {
-	req, err := http.NewRequest("GET", host+"/v1/GET/payLog?cid=1001&pversion=v1.0&product_id=1001", nil)
+	req, err := http.NewRequest("GET", host+"/v1/GET/payLog?cid=1001&pversion=v1.0&product_id=1002", nil)
 	if err != nil {
 		fmt.Println(err)
 		return

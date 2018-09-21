@@ -4,9 +4,27 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"os"
+
+	"io/ioutil"
 )
 
 func main() {
+	var b = make([]byte,16)
+	reader,_:=os.Stdin.Read(b[:])
+	//for {
+	//	_,err:=reader.Read(b[:])
+	//	if err!=nil {
+	//		if err==io.EOF {
+	//			break
+	//		}else{
+	//			fmt.Println(err.Error())
+	//			return
+	//		}
+	//	}
+	//}
+	fmt.Println(len(b))
+	fmt.Println(b)
 	//q1()
 	//q2()
 	//q3()

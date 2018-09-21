@@ -12,14 +12,21 @@ const (
 func main() {
 
 	//将string转换成int64
-	timestampInt64, _ := strconv.ParseInt("1448333419", 10, 64)
+	timestampInt64, _ := strconv.ParseInt("1521421353", 10, 64)
 	fmt.Println(timestampInt64)
 
-	//将字符串转换成时间戳
-	Time, _ := time.ParseInLocation("2006/01/02", "2018/03/19",time.Local)
-	timestamp := Time.Unix()
-	fmt.Println("k:",Time)
+	str_time := time.Unix(timestampInt64, 0).Format("2006-01-02 15:04:05")
+	fmt.Println(str_time)
 
+	//将字符串转换成时间戳
+	Time, _ := time.ParseInLocation(startTime, "2018-03-19 09:02:33",time.Local)
+	timestamp := Time.Unix()
+	fmt.Println(timestamp)
+	//fmt.Println("k:",Time)
+
+	Time2, _ := time.ParseInLocation("2006/01/02", "2018/04/19",time.Local)
+	fmt.Println(Time2,"333")
+	fmt.Println(Time.Unix()<Time2.Unix())
 	//时间类型精度修改
 	//Local循环不影响, 即可以认为Local和Unix方式存储的空间对象是同一个，不管如何Local Unix都指代一个，不会出现多次-8h
 	t3:=Time.Local().Local().Local()
@@ -44,4 +51,13 @@ func main() {
 	//fmt.Println(cap(m))
 
 	fmt.Println(time.Now().UnixNano()/1e3)
+
+	var t time.Time = time.Now()
+	fmt.Println(t.Format("2006-01-02"))
+
+
+	heartBeatTick := time.Tick(2 * time.Second)
+	for {
+		fmt.Println(<-heartBeatTick)
+	}
 }

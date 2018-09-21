@@ -2,67 +2,49 @@ package main
 
 import (
 	"fmt"
-	"go/types"
-	"container/list"
-	"time"
-	"runtime"
-
+	"strings"
 )
 type User struct{
 	Name string
 }
+//公众号支付返回结果结构体
+type PayParam struct{
+	AppId string `json:"appId" map:"appId"`
+	TimeStamp string `json:"timeStamp" map:"timeStamp"`
+	Status string `json:"status" map:"status"`
+	SignType string `json:"signType" map:"signType"`
+	Package string `json:"package" map:"package"`
+	CallbackURL string `json:"callback_url,omitempty" map:"callback_url"`
+	NonceStr string `json:"nonceStr" map:"status" map:"nonceStr"`
+	PaySign string `json:"paySign" map:"paySign"`
+}
 func main() {
-  var  users = make(map[string]User,0)
-   var user = User{"ft"}
-   //te(user)
-   //te(users)
-   users["1"] = user
-   fmt.Println(users["1"].Name)
-
-   m:=make(map[string]string,5000)
-  // m["d"]="f"
-   delete(m,"d")
-   fmt.Print(m)
-
-   var l = &list.List{}
-   e:=l.PushFront(5)
-	l.PushFront(6)
-   l.Remove(e)
-	l.Remove(e)
-  fmt.Println(l.Len())
-
-  fmt.Println(time.Now().Day())
-
-
-  fmt.Println(runtime.NumCPU())
-  pre := runtime.GOMAXPROCS(runtime.NumCPU())
-  fmt.Println(pre,runtime.NumCPU())
-
-  ms:=make(map[int]*User,0)
-  ms[1]= &user
-  fmt.Println(len(ms))
-  ms[1]=nil
-  fmt.Println(len(ms))
-  fmt.Println(ms[1])
-
-  var i=5
-  switch i {
-  case 5:
-  	fmt.Println(1)
-  	fmt.Println(2)
-  case 3:
-  	fmt.Println(3)
-  }
+	handlePayInfo(`{"appId":"wx290ce4878c94369d","timeStamp":"1527220149312","status":"0","signType":"MD5","package":"prepay_id=wx251149092901085a3d4cea760765861054","callback_url":null,"nonceStr":"1527220149312","paySign":"A8189D733CC9BEBADCA6E0C3551DBB11"}`)
 }
 
-func te(dest interface{}){
-	switch dest.(type){
-	case types.Pointer:
-		fmt.Println("是切片")
-	case types.Struct:
-		fmt.Println("是实例")
-	default:
-		fmt.Println("都不是")
+func handlePayInfo(payInfo string) PayParam{
+	payIn := payInfo[1:len(payInfo)-1]
+	payIn = strings.Replace(payIn,"\"","",-1)
+	fmt.Println(payIn)
+	params:=strings.Split(payIn,",")
+	var temp []string
+	var kv = make(map[string]string,0)
+	for _,v:=range params{
+		temp=strings.Split(v,":")
+		if temp[1]==""||temp[1]=="nil"||temp[1]=="null"||len(temp)!=2{
+			continue
+		}
+		kv[temp[0]]=temp[1]
 	}
-
+	var payRs = PayParam{
+		AppId:kv["appId"],
+		TimeStamp:kv["timeStamp"],
+		Status:kv["status"],
+		SignType:kv["signType"],
+		Package:kv["package"],
+		NonceStr:kv["nonceStr"],
+		PaySign:kv["paySign"],
+	}
+	fmt.Println(payRs.Package)
+	return payRs
 }

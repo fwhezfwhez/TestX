@@ -3,8 +3,6 @@ package test
 import (
 	"net/http"
 	"fmt"
-	"bytes"
-	"github.com/go-chi/chi/_examples/versions/data"
 	"github.com/gin-gonic/gin/json"
 )
 

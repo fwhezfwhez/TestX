@@ -9,6 +9,8 @@ import (
 
 	"io/ioutil"
 	"encoding/xml"
+	"bytes"
+	"encoding/json"
 )
 
 type Xml struct {
@@ -17,34 +19,29 @@ type Xml struct {
 	Year int
 }
 type User struct{
-	Name string `json:"name"`
-	Age string `json:"age""`
+	Name string `json:"uname"`
+	Age string `json:"id"`
 }
 func main() {
+   //buf:=[]byte("hello")
+   //fmt.Println("buf:",string(buf))
+   //reader:= bytes.NewReader(buf)
+   ////var result = make([]byte,len(buf))
+   ////reader.Read(result)
+   //result,_ := ioutil.ReadAll(reader)
+   //fmt.Println("rs：",string(result))
 
-	//user := User{}
-	//usJS,er:=json.Marshal(user)
-	//if er!=nil {
-	//	fmt.Println(er.Error())
-	//	return
-	//}
-	//req,err:=http.NewRequest("POST","http://10.0.203.92:8087/TestBinding",bytes.NewReader(usJS))
-	//req.Header.Set("Content-Type", "application/json")
-	//if err!=nil{
-	//	fmt.Println(err)
-	//	return
-	//}
-	//client :=http.Client{}
-	//resp,err:=client.Do(req)
-	//if err!=nil{
-	//	fmt.Println(err)
-	//	return
-	//}
-	//helpRead(resp)
+	//defer func(func ()){}(func (){fmt.Println("ok")})
+	//fmt.Println(5)
 
-
-	req,err:=http.NewRequest("GET","http://10.0.203.92:8088/TestBindQuery?age=9",nil)
-	//req.Header.Set("Content-Type", "application/json")
+	user := User{"ft","9"}
+	usJS,er:=json.Marshal(user)
+	if er!=nil {
+		fmt.Println(er.Error())
+		return
+	}
+	req,err:=http.NewRequest("DELETE","http://localhost:8088/user/{fttt}/{5}/delete",bytes.NewReader(usJS))
+	req.Header.Set("Content-Type", "application/json")
 	if err!=nil{
 		fmt.Println(err)
 		return
@@ -56,6 +53,21 @@ func main() {
 		return
 	}
 	helpRead(resp)
+
+
+	//req,err:=http.NewRequest("GET","http://172.21.166.81:8088/TP",nil)
+	////req.Header.Set("Content-Type", "application/json")
+	//if err!=nil{
+	//	fmt.Println(err)
+	//	return
+	//}
+	//client :=http.Client{}
+	//resp,err:=client.Do(req)
+	//if err!=nil{
+	//	fmt.Println(err)
+	//	return
+	//}
+	//helpRead(resp)
 
 	//xxml:=Xml{
 	//	Age:"33",

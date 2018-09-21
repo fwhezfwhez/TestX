@@ -1,39 +1,39 @@
 package main
 
 import (
-	"log"
-	// 辅助库
-	"github.com/golang/protobuf/proto"
-	// test.pb.go 的路径
-	"example"
+ "test_X/test_protobuf/Im"
+ "github.com/golang/protobuf/proto"
+ "log"
 )
 
 func main() {
-	// 创建一个消息 Test
-	test := &example.Test{
-		// 使用辅助函数设置域的值
-		Label: proto.String("hello"),
-		Type:  proto.Int32(17),
-		Optionalgroup: &example.Test_OptionalGroup{
-			RequiredField: proto.String("good bye"),
-		},
-	}
+ // 创建一个消息
+ test := &Im.Helloworld{
+  // 使用辅助函数设置域的值
+  Str: "hello!" ,
+  //  Id:  321,
+  Opt: 1234,
+ }
 
-	// 进行编码
-	data, err := proto.Marshal(test)
-	if err != nil {
-		log.Fatal("marshaling error: ", err)
-	}
+ test.Id = 3244
 
-	// 进行解码
-	newTest := &example.Test{}
-	err = proto.Unmarshal(data, newTest)
-	if err != nil {
-		log.Fatal("unmarshaling error: ", err)
-	}
+ // 进行编码
+ data, err := proto.Marshal(test)
+ if err != nil {
+  log.Fatal("marshaling error: ", err)
+ }
 
-	// 测试结果
-	if test.GetLabel() != newTest.GetLabel() {
-		log.Fatalf("data mismatch %q != %q", test.GetLabel(), newTest.GetLabel())
-	}
+ // 进行解码
+ newTest := &Im.Helloworld{}
+ err = proto.Unmarshal(data, newTest)
+ if err != nil {
+  log.Fatal("unmarshaling error: ", err)
+ }
+
+ log.Printf("id:%d;opt:%d;str:%s;",newTest.Id,newTest.Opt,newTest.Str)
+
+ // 测试结果
+ if test.String() != newTest.String() {
+  log.Fatalf("data mismatch %q != %q", test.String(), newTest.String())
+ }
 }

@@ -11,14 +11,14 @@ import (
 	"encoding/json"
 )
 
-//var host = "http://media.qinglong365.com/"
-var host = "http://10.0.203.92:8087/"
+	//var host = "http://media.qinglong365.com/api/"
+var host = "http://10.0.205.33:8087/"
 
 type Medium struct {
-	MediumName  string `json:"mediumName" form:"mediumName"` //媒体称长度在0到20
+	MediumName  string `json:"medium_name" form:"medium_name"` //媒体称长度在0到20
 	Os          string `json:"os" form:"os"`                 //android 或者ios
 	Category    string `json:"category" form:"category"`
-	SubCategory string `json:"subcategory" form:"subCategory"`
+	SubCategory string `json:"subcategory" form:"subcategory"`
 	Keyword     string `json:"keyword,omitempty" form:"keyword"`
 	Intro       string `json:"intro,omitempty" form:"intro"`
 	UserName    string `json:"userName,omitempty" form:"userName"`
@@ -26,14 +26,23 @@ type Medium struct {
 }
 
 type Slot struct {
-	SlotName   string `json:"slotName" form:"slotName"` //广告位名字,长度在20以内
-	UserName   string `json:"userName" form:"userName"`
-	MediumName string `json:"mediumName" form:"mediumName"`
-	AdType     string `json:"adType" form:"adType"`
-	Os         string `json:"os" form:"os"`
-	Size       string `json:"size" form:"size"`
-	AppId      string `json:"appId,omitempty" form:"appId"`
-	SlotId     string `json:"slotId,omitempty" form:"slotId"`
+	SlotName   string `json:"slot_name" form:"slot_name" binding:"required"`    //广告位名字,长度在20以内
+	UserName string `json:"username" form:"username" binding:"required"`
+	MediumName string `json:"medium_name" form:"medium_name" binding:"required"`
+	AdType string `json:"ad_type" form:"ad_type" binding:"required"`
+	Os string `json:"os" form:"os" binding:"required"`
+	Size string `json:"size" form:"size" binding:"required"`
+	AppId string `json:"appid" form:"appid" binding:"required"`
+	SlotId string `json:"slot_id" form:"slot_id"`
+}
+
+type CidMedium struct{
+	ProductId string `json:"product_id" binding:"required"`
+	UserName string `json:"username" binding:"required"`
+	Category string `json:"category" binding:"required"`
+	SubCategory  string `json:"subcategory" binding:"required"`
+	Cid string`json:"cid" binding:"required"`
+	AppId string `json:"appid"`
 }
 
 var UserName = "admin"
@@ -56,26 +65,199 @@ func main() {
 	//UserInsert()
 	//2.测试用户列表
 	//UserList()
-	//3.测试媒体新增
-	//medium := Medium{"testMedium2","ios","消费","娱乐","123","hello","admin","199992"}
-	//mediums :=[]Medium{medium}
-	//MediumInsert(mediums)
-	//4.测试媒体列表
-	MediumList()
-
 	//6.获取用户名集
 	//GetUserNames()
-	//7.获取MediumNames集
+
+
+	//4.测试媒体列表 okok
+MediumList()
+
+
+	//7.获取MediumNames集ok
 	//MediumNames()
-	//8.获取medium OS和appId
+	//8.获取medium OS和appId OK
 	//MediumOSAppId()
 
 	//9.实际数据导入
 	//PourData()
 
+	//10.测试cid方式导入
+	//InsertByCid()
+
+	//11.测试媒体新增 OK
+	//InsertMedium()
+
+	//12.测试广告位查询 OK
+	//SlotLsit()
+
+	//13.测试广告位新增
+	//InsertSlot2()
+
+	//14.测试cid通道
+	//InsertByCid()
+
+	////3.测试媒体新增
+	//medium1 := Medium{"渠道1_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "67"}
+	//medium2 := Medium{"渠道1_android", "android", "办公", "邮箱", "123", "hello", "admin", "67"}
+	//medium3 := Medium{"渠道2_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "68"}
+	//medium4 := Medium{"渠道2_android", "android", "办公", "邮箱", "123", "hello", "admin", "68"}
+	//medium5 := Medium{"渠道3_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "69"}
+	////
+	//medium6 := Medium{"渠道3_android", "android", "办公", "邮箱", "123", "hello", "admin", "69"}
+	//medium7 := Medium{"渠道4_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "70"}
+	//medium8 := Medium{"渠道4_android", "android", "办公", "邮箱", "123", "hello", "admin", "70"}
+	//medium9 := Medium{"渠道5_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "71"}
+	//medium10 := Medium{"渠道5_android", "android", "办公", "邮箱", "123", "hello", "admin", "71"}
+	//
+	//
+	//medium11 := Medium{"渠道6_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "72"}
+	//medium12 := Medium{"渠道6_android", "android", "办公", "邮箱", "123", "hello", "admin", "72"}
+	//medium13 := Medium{"渠道7_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "73"}
+	//medium14 := Medium{"渠道7_android", "android", "办公", "邮箱", "123", "hello", "admin", "73"}
+	//medium15 := Medium{"渠道8_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "74"}
+	//
+	//medium16 := Medium{"渠道8_android", "android", "办公", "邮箱", "123", "hello", "admin", "74"}
+	////medium17 := Medium{"渠道9_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "75"}
+	////medium18 := Medium{"渠道9_android", "android", "办公", "邮箱", "123", "hello", "admin", "75"}
+	////medium19 := Medium{"渠道10_ios", "ios", "办公", "邮箱", "123", "hello", "admin", "76"}
+	////medium20 := Medium{"渠道10_android", "android", "办公", "邮箱", "123", "hello", "admin", "76"}
+	//mediums := []Medium{medium15, medium16}
+	//MediumInsert(mediums)
+
+	//medium20 := Medium{"test11", "android", "办公", "邮箱", "123", "hello", "ft", "-1"}
+	//mediums := []Medium{medium20}
+	//MediumInsert(mediums)
+
+
+	//insertSlot("渠道1_ios","ios","67","11121","广告位1_ios")
+	//insertSlot("渠道1_android","android","67","11122","广告位1_android")
+	//insertSlot("渠道2_ios","ios","68","11123","广告位2_ios")
+	//insertSlot("渠道2_android","android","68","11124","广告位2_android")
+	//insertSlot("渠道3_ios","ios","69","11125","广告位3_ios")
+	//insertSlot("渠道3_android","android","69","11126","广告位3_android")
+	//insertSlot("渠道4_ios","ios","70","11127","广告位4_ios")
+	//insertSlot("渠道4_android","android","70","11128","广告位4_android")
+	//insertSlot("渠道5_ios","ios","71","11129","广告位5_ios")
+	//insertSlot("渠道5_android","android","71","11130","广告位5_android")
+	//insertSlot("渠道6_ios","ios","72","11131","广告位6_ios")
+	//insertSlot("渠道6_android","android","72","11132","广告位6_android")
+	//insertSlot("渠道7_ios","ios","73","11133","广告位7_ios")
+	//insertSlot("渠道7_android","android","73","11134","广告位7_android")
+	//insertSlot("渠道8_ios","ios","74","11135","广告位8_ios")
+	//insertSlot("渠道8_android","android","74","11136","广告位8_android")
+	//insertSlot("渠道9_ios","ios","75","11137","广告位9_ios")
+	//insertSlot("渠道9_android","android","75","11138","广告位9_android")
+	//insertSlot("渠道10_ios","ios","76","11139","广告位10_ios")
+	//insertSlot("渠道10_android","android","76","11140","广告位10_android")
+
 
 }
 
+
+
+func InsertByCid(){
+	cidM:=CidMedium{
+		ProductId:"1007",
+		UserName:"ft",
+		Category:"办公",
+		SubCategory:"邮箱",
+		Cid:"1010",
+	}
+	buf,er := json.Marshal(cidM)
+	if er!=nil{
+		panic(er.Error())
+	}
+	req,er:= http.NewRequest("POST",host+"v1/POST/cidChain",bytes.NewReader(buf))
+	if er!=nil{
+		panic(er.Error())
+	}
+	req.Header.Set("Content-Type","application/json")
+
+	client :=http.Client{}
+	resp,er:=client.Do(req)
+	helpRead(resp)
+}
+
+func insertSlot(mediumname,os,appId,slotId,slotName string) {
+	v := Slot{
+		UserName:   "admin",
+		AdType:     "graphic",
+		Size:       "500x270",
+		MediumName: mediumname,
+		Os:         os,
+		AppId:      appId,
+		SlotId:     slotId,
+		SlotName:   slotName,
+	}
+	InsertSlot(v)
+}
+func InsertSlot2() {
+	v := Slot{
+		UserName:   "ft",
+		AdType:     "graphic",
+		Size:       "500x270",
+		MediumName: "测试媒体3",
+		Os:         "ios",
+		AppId:      "-7",
+		SlotId:     "-2",
+		SlotName:   "测试广告位3",
+	}
+
+	content, err := json.Marshal(v)
+	if err != nil {
+		panic(err)
+	}
+	t1 := time.Now()
+	resp, err := http.Post(host+"v1/POST/slot/create", "application/json", bytes.NewReader(content))
+	t2 := time.Now()
+	fmt.Println(t2.Sub(t1))
+	if err != nil {
+		panic(err)
+	}
+	//fmt.Print("第" + strconv.Itoa(i) + "个:")
+	helpRead(resp)
+}
+
+func InsertSlot(v Slot) {
+	content, err := json.Marshal(v)
+	if err != nil {
+		panic(err)
+	}
+	t1 := time.Now()
+	resp, err := http.Post(host+"v1/POST/slot/create", "application/json", bytes.NewReader(content))
+	t2 := time.Now()
+	fmt.Println(t2.Sub(t1))
+	if err != nil {
+		panic(err)
+	}
+	//fmt.Print("第" + strconv.Itoa(i) + "个:")
+	helpRead(resp)
+}
+func InsertMedium() {
+	v := Medium{
+		MediumName:  "测试媒体3",
+		Os:          "ios",
+		Category:    "办公",
+		SubCategory: "邮箱",
+		Keyword:     "测试",
+		Intro:       "测试",
+		UserName:    "ft",
+		AppId:       "18",
+	}
+	content, err := json.Marshal(v)
+	if err != nil {
+		panic(err)
+	}
+	t1 := time.Now()
+	resp, err := http.Post(host+"v1/POST/medium/create", "application/json", bytes.NewReader(content))
+	t2 := time.Now()
+	fmt.Println(t2.Sub(t1))
+	if err != nil {
+		panic(err)
+	}
+	//fmt.Print("第" + strconv.Itoa(i) + "个:")
+	helpRead(resp)
+}
 func PourData() {
 	var Data = map[string]string{
 		"中至南昌麻将ios":     "7",
@@ -102,7 +284,7 @@ func PourData() {
 		"中至万年麻将android": "59",
 	}
 
-	mediums:= Map2MediumSlice(Data)
+	mediums := Map2MediumSlice(Data)
 	slots := GetSlotSlice(mediums)
 	MediumInsert(mediums)
 	SlotInsert(slots)
@@ -120,18 +302,17 @@ func Map2MediumSlice(data map[string]string) ([]Medium) {
 		mediums[i].Keyword = Keyword
 		mediums[i].Intro = Intro
 
-
 		i++
 	}
 	return mediums
 }
 
-func GetSlotSlice(mediums []Medium) []Slot{
+func GetSlotSlice(mediums []Medium) []Slot {
 	slots := make([]Slot, len(mediums))
 
-	for i,v :=range mediums {
+	for i, v := range mediums {
 		slots[i].UserName = v.UserName
-		slots[i].AppId =v.AppId
+		slots[i].AppId = v.AppId
 		slots[i].MediumName = v.MediumName
 		slots[i].Os = v.Os
 		slots[i].AdType = AdType
@@ -265,8 +446,8 @@ func MediumList() {
 
 		//resp, err := http.Get(host + "v1/GET/mediums/list")
 		client := &http.Client{}
-		req, err := http.NewRequest("GET", "http://localhost:8087/v1/GET/mediums/list",nil)
-		req.Header.Add("Authorization", "eyJleHAiOiIxNTIzNDE5MDQ5Iiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.wEAxgTXAdJ84zPuCImGxv2pjc6kYB4WelkhBn4+IHHI=")
+		req, err := http.NewRequest("GET", host+"/v1/GET/mediums/list", nil)
+		//req.Header.Add("Authorization", "eyJleHAiOiIxNTIzNDE5MDQ5Iiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.wEAxgTXAdJ84zPuCImGxv2pjc6kYB4WelkhBn4+IHHI=")
 		resp, err := client.Do(req)
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
@@ -304,7 +485,7 @@ func SlotLsit() {
 	//测试广告列表
 	if true {
 		t1 := time.Now()
-		resp, err := http.Get(host + "v1/GET/slots/list?slotName=中间广告")
+		resp, err := http.Get(host + "v1/GET/slots/list")
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
 		if err != nil {
@@ -320,7 +501,7 @@ func UserLogin() {
 		var content = fmt.Sprintf("userName=admin&password=123456")
 		t1 := time.Now()
 		resp, err := http.Post(host+"v1/POST/user/login", "application/x-www-form-urlencoded", strings.NewReader(content))
-		Token =resp.Header.Get("Authorization")
+		Token = resp.Header.Get("Authorization")
 		fmt.Println(Token)
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
@@ -346,7 +527,7 @@ func GetUserNames() {
 func MediumNames() {
 	if true {
 		t1 := time.Now()
-		resp, err := http.Get(host + "v1/GET/mediums/mediumNames/list?userName=admin")
+		resp, err := http.Get(host + "v1/GET/mediums/mediumNames/list?username=ft")
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
 		if err != nil {
@@ -361,7 +542,7 @@ func MediumOSAppId() {
 
 	if true {
 		t1 := time.Now()
-		resp, err := http.Get(host + "v1/GET/medium/mediumOSAndAppId?mediumName=中至麻将")
+		resp, err := http.Get(host + "v1/GET/medium/mediumOSAndAppId?medium_name=中至德兴麻将ios")
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
 		if err != nil {

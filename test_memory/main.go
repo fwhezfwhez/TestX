@@ -3,6 +3,7 @@ package main
 import (
 	"unsafe"
 	"fmt"
+	db "Pay/Common/xormTool"
 )
 
 type User struct{
@@ -19,8 +20,11 @@ func (user User) Sizeof(){
 	fmt.Println("Married,bool",unsafe.Sizeof(user.Married))
 	fmt.Println("Salary,float64,",unsafe.Sizeof(user.Salary))
 	fmt.Println("Error,error,",unsafe.Sizeof(user.Error))
+
+
 }
 func main() {
+	fmt.Println(db.Db)
 	user := User{}
 	user.Sizeof()
 	fmt.Println(unsafe.Sizeof(user))

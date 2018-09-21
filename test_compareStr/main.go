@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 func main() {
-	fmt.Println("ac_"<"ac")
+	var a = 5
+	go t(a)
+	a =7
+	runtime.Gosched()
+}
+
+
+func t(i int){
+	fmt.Println(i)
 }

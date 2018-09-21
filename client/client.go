@@ -8,28 +8,63 @@ import (
 	"io/ioutil"
 )
 
-func main() {//{"id":"2","desc":"happy"}
+type Slot struct{
+	SlotId string `json:"slot_id,omitempty"`
+	SlotName string `json:"slot_name,omitempty"`
+}
+func main() {
+	TestAdd()
+	TestUpdate()
+	TestQuery()
+	TestDelete()
+}
 
-	type Addr struct {
-		Id string
-		Addesc string
-	}
-	type Data struct{
-		Idq string
-		Name string
-		//Address Addr
-		Address Addr
-	}
-	addr := Addr{Id:"3",Addesc:"afsdf"}
-	content := Data{"6","Kim",addr}
-	contentJS,err:=json.Marshal(content)
+func TestAdd(){
+	slot:= Slot{SlotName:"广告位2"}
+	adddJson,err:=json.Marshal(slot)
 	if err!=nil{
 		panic(err)
 	}
-	var content2 interface{}
-	json.Unmarshal(contentJS,&content2)
-	fmt.Println(content2)
-	resp, err := http.Post("http://10.0.203.92:8080/heihei", "application/json", bytes.NewReader(contentJS))
+	resp, err := http.Post("http://10.0.203.92:8080/slot/add", "application/json", bytes.NewReader(adddJson))
+	defer resp.Body.Close()
+	if err!=nil{
+		panic(err)
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(body))
+}
+
+func TestDelete(){
+	slot:= Slot{SlotId:"2"}
+	adddJson,err:=json.Marshal(slot)
+	if err!=nil{
+		panic(err)
+	}
+	resp, err := http.Post("http://10.0.203.92:8080/slot/delete", "application/json", bytes.NewReader(adddJson))
+	defer resp.Body.Close()
+	if err!=nil{
+		panic(err)
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(body))
+}
+
+func TestUpdate(){
+	slot:= Slot{SlotId:"3"}
+	adddJson,err:=json.Marshal(slot)
+	if err!=nil{
+		panic(err)
+	}
+	resp, err := http.Post("http://10.0.203.92:8080/slot/modify", "application/json", bytes.NewReader(adddJson))
+	defer resp.Body.Close()
+	if err!=nil{
+		panic(err)
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(body))
+}
+func TestQuery(){
+	resp, err := http.Get("http://10.0.203.92:8080/slots/list")
 	defer resp.Body.Close()
 	if err!=nil{
 		panic(err)

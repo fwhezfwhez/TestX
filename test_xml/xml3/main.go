@@ -75,6 +75,7 @@ type TextResult struct{
 }
 
 func main() {
+
 	order := Order{
 		TravelDate: "2018-04-20",
 		InfoId:     "22154574",

@@ -3,8 +3,7 @@ package main
 import (
 	"fmt"
 	"crypto/md5"
-	"bytes"
-	"bufio"
+	"unsafe"
 )
 
 const (
@@ -26,23 +25,12 @@ func(user User) String() string{
 	return fmt.Sprintf("name:%s",user.Username)
 }
 func main(){
-	var user = &User{"ft", "123456"}
-	user.EncodingPW()
-	fmt.Println(user.Password)
+  var v1 interface{} = (int32)(6)
+  var v2 interface{} =(int8)(6)
+  fmt.Println(*((*int32)(unsafe.Pointer(&v1))))
 
-	  user2  :=&User{}
-	fmt.Println(user2)
+  fmt.Println(*((*int64)(unsafe.Pointer(&v1)))==*((*int64)(unsafe.Pointer(&v2))))
 
-	var userTemp *User
-	fmt.Println(userTemp)
-
-   var buf bytes.Buffer
-   buf.WriteString("1234")
-	buf.WriteString("12354")
-   fmt.Println(buf.String())
-
-
-   fmt.Println(k1)
 
 }
 

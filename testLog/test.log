@@ -42,3 +42,6 @@
 2018/03/19 18:00:28 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:19: 日志23
 2018/03/19 18:07:52 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:18: 日志1.
 2018/03/19 18:07:52 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:19: 日志23
+2018/07/16 15:45:38 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:16: 测试
+101010112018/07/16 15:46:49 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:17: 测试
+[id=10101011] 2018/07/16 15:47:12 G:/go_workspace/GOPATH/src/test_X/testLog/main.go:17: 测试
