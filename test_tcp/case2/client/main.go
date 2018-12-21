@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net"
-	"log"
 	"bufio"
 	"fmt"
+	"log"
+	"net"
 )
 
 func init() {
@@ -17,19 +17,20 @@ func doTask(conn net.Conn) {
 func main() {
 	hostInfo := "127.0.0.1:1201"
 	conn, err := net.Dial("tcp", hostInfo)
-	defer conn.Close()
+	if conn !=nil {
+		defer conn.Close()
+	}
 	if err != nil {
 		log.Println(err.Error())
 		return
 	}
 	conn.Write([]byte("request from client"))
 	rs, err := bufio.NewReader(conn).ReadString('\n')
-	fmt.Println(rs)
+	fmt.Println("rs:", rs)
 	if err != nil {
 		log.Println(err.Error())
 		return
 	}
-
 
 	//conn.Write([]byte("helloWorld2"))
 	//rs, err = bufio.NewReader(conn).ReadString('\n')
@@ -47,6 +48,5 @@ func main() {
 	//	}
 	//	fmt.Println(rs)
 	//}
-
 
 }

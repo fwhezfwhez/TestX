@@ -1,0 +1,13 @@
+{
+  "name": "test_yarn",
+  "version": "1.0.0",
+  "description": "a test case for yarn project flow",
+  "main": "index.js",
+  "repository": "https://github.com/fwhezfwhez/test_yarn_flow.git",
+  "author": "fwhezfwhez",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "vue-cli": "^2.9.6"
+  }
+}

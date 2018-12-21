@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type Product struct {
@@ -17,7 +16,6 @@ func main() {
 		panic("连接数据库失败")
 	}
 	defer db.Close()
-	db.
 	// 自动迁移模式
 	db.AutoMigrate(&Product{})
 
@@ -34,4 +32,5 @@ func main() {
 
 	// 删除 - 删除product
 	db.Delete(&product)
+
 }

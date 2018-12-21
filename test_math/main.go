@@ -3,9 +3,16 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
 )
+type U struct{}
 
 func main() {
+	var a  = make(map[string]*U)
+	fmt.Println(a["22"] == nil)
+
+	var str = "^^$$"
+	fmt.Println(str[1:len(str)-1])
 	//1.表示一个非number值
 	fmt.Println(math.NaN()==math.NaN())
 
@@ -23,4 +30,29 @@ func main() {
 
 	fmt.Println(5/2)
 	fmt.Println(math.Pow(4,2))
+
+	fmt.Println(RemovePrefix("ax", "axx"))
+
+}
+
+func RemovePrefix(s string,prefix string) string{
+	if !strings.HasPrefix(s, prefix){
+		return s
+	}
+	return s[len(prefix):]
+}
+
+func Fo(){
+	// 0 0 1 2 3 4 5
+	// 1 0 1 2 3 4 5
+	L:
+	for i:=0;i<2;i++{
+		fmt.Println("i:",i)
+		for j:=0;j<10;j++{
+			fmt.Println("j:",j)
+			if j ==5 {
+				continue L
+			}
+		}
+	}
 }

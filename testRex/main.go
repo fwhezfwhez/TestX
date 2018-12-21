@@ -2,11 +2,6 @@ package main
 
 import (
 	"fmt"
-	//"reflect"
-	"regexp"
-	"log"
-	"reflect"
-	"sync"
 )
 
 type ss struct {
@@ -18,28 +13,30 @@ type User struct{
 	Age string
 }
 func main() {
-	r, _ := regexp.Compile("MicroMessenger/i")
-	fmt.Println(r.MatchString("Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E302 MicroMessenger/6.6.6 NetType/4G Language/zh_CN"))
+	//r, _ := regexp.Compile("MicroMessenger/i")
+	//fmt.Println(r.MatchString("Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E302 MicroMessenger/6.6.6 NetType/4G Language/zh_CN"))
+   //
+   //
+	//user := User{"ft","9"}
+	//vType :=reflect.TypeOf(user)
+	//fmt.Println(vType.Field(0).Name=="1")
+   //
+	//user =User{
+	//"ft",
+	//"2",
+	//}
+	//log.Println(user)
+	//fmt.Println(5/2.)
+	//fmt.Println(len([][]string{{"1","2","3"},{"4","5","6"}}))
+   //
+	//r, _ = regexp.Compile("^[0-9]+$")
+	//fmt.Println(r.MatchString("张3,fdfs,"))
+   //
+	//var s interface{} ="5"
+	//fmt.Println(s.(string)+"5")
+   //wg := sync.WaitGroup{}
 
 
-	user := User{"ft","9"}
-	vType :=reflect.TypeOf(user)
-	fmt.Println(vType.Field(0).Name=="1")
-
-	user =User{
-	"ft",
-	"2",
-	}
-	log.Println(user)
-	fmt.Println(5/2.)
-	fmt.Println(len([][]string{{"1","2","3"},{"4","5","6"}}))
-
-	r, _ = regexp.Compile("^[0-9]+$")
-	fmt.Println(r.MatchString("张3,fdfs,"))
-
-	var s interface{} ="5"
-	fmt.Println(s.(string)+"5")
-   wg := sync.WaitGroup{}
 
 }
 	//r, _ := regexp.Compile("^[\u4E00-\u9FA5a-zA-Z0-9,]{0,300}$")

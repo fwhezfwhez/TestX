@@ -4,9 +4,12 @@ package main
 import (
 "fmt"
 "github.com/mozillazg/go-pinyin"
+	"strings"
 )
 
 func main() {
+	fmt.Println(len(strings.Split("\"d\"", "\"")))
+
 	hans := "中国人"
 
 	// 默认

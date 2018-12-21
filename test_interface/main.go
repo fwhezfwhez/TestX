@@ -32,7 +32,6 @@ func init(){
 }
 func main(){
 	user :=User{}
-	//我还得加锁？
 	/*
 		m := new(sync.Mutex)
 		m.Lock()

@@ -1,9 +1,10 @@
 package main
 
 import (
+	"fmt"
+	"io"
 	"net"
 	"os"
-	"fmt"
 )
 
 func main() {
@@ -31,20 +32,34 @@ func handleClient(conn net.Conn) {
 	defer conn.Close()
 
 	var buf [512]byte
+	var err error
+	var n int
 	for {
 		// read upto 512 bytes
-		_, err := conn.Read(buf[0:])
+		n, err = conn.Read(buf[0:])
 		if err != nil {
+			if err == io.EOF{
+				return
+			}
 			fmt.Println(err.Error())
-			continue
+			return
 		}
-
+		fmt.Println("received:", string(buf[0:n]))
 		// write the n bytes read
 		_, err2 := conn.Write([]byte("reply from server"))
+
 		if err2 != nil {
 			fmt.Println(err2.Error())
-			continue
+			return
 		}
+
+		err =conn.Close()
+		if err != nil {
+
+			fmt.Println(err.Error())
+			return
+		}
+		fmt.Println(conn)
 	}
 }
 

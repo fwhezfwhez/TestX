@@ -1,11 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
+type U struct{}
 func main() {
- var s = make([]int,1)
- s=append(s,1)
- fmt.Print(s)
+    var u U
+    var u2 = U{}
+    fmt.Println(u2 == u)
 }
+

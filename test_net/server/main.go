@@ -18,7 +18,6 @@ func main() {
 			// handle error
 			continue
 		}
-		conn.
 		go handleConnection(conn)
 	}
 }

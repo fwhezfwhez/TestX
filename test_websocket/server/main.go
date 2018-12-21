@@ -1,48 +1,45 @@
 package main
 
-import(
-	"golang.org/x/net/websocket"
-	"fmt"
-	"net/http"
+import (
 	"flag"
+	"fmt"
+	"golang.org/x/net/websocket"
+	"io"
 	"log"
+	"net/http"
 )
 
-
-func init(){
+func init() {
 	log.SetFlags(log.LstdFlags | log.Llongfile)
 }
-func handler(conn *websocket.Conn){
+func handler(conn *websocket.Conn) {
 	fmt.Printf("a new ws conn: %s->%s\n", conn.RemoteAddr().String(), conn.LocalAddr().String())
 	var err error
 	for {
-		var reply string
-		err = websocket.Message.Receive(conn, &reply)
+		var receive []byte
+		// 不需要为receive初始化，因为Receive内置了
+		err = websocket.Message.Receive(conn, &receive)
+		fmt.Println(receive)
 		if err != nil {
-			fmt.Println("receive err:",err.Error())
-			break
+			if err == io.EOF {
+				fmt.Println("结束")
+				break
+			}else{
+				fmt.Println("receive err:", err.Error())
+				break
+			}
 		}
-		fmt.Println("Received from client: " + reply)
+		fmt.Println("Received from client: " + string(receive))
+		reply := "你好，收到了你的请求"
 		if err = websocket.Message.Send(conn, reply); err != nil {
 			fmt.Println("send err:", err.Error())
 			break
 		}
 	}
 }
-func start(addr string)(error){
-	http.Handle("/ws", websocket.Handler(ws.handler))
-	fmt.Println("begin to listen")
-	err := http.ListenAndServe(addr, nil)
-	if err != nil {
-		fmt.Println("ListenAndServe:", err)
-		return err
-	}
-	fmt.Println("start end")
-	return nil
-}
 
-func main(){
-	addr  := "127.0.1.1:8888"
+func main() {
+	addr := "127.0.0.1:8888"
 	flag.Parse()
 	http.Handle("/ws", websocket.Handler(handler))
 	fmt.Println("begin to listen")

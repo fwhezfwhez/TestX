@@ -1,141 +1,69 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"time"
 )
 
-type C struct {
-	In interface{} `json:"in"`
-}
-
+type TimeStamp int64
 type D struct {
+	Name string    `json:"name"`
+	Age  int       `json:"age"`
+	Ts   TimeStamp `json:"ts"`
+}
+
+func (d TimeStamp) MarshalJSON() ([]byte, error) {
+	rs := time.Unix(int64(d), 0).Format("2006-01-02")
+	js, er := json.Marshal(rs)
+	return js, er
+}
+func (d *TimeStamp) UnmarshalJSON(data []byte) error {
+	var rs string
+	e := json.Unmarshal(data, &rs)
+	if e != nil {
+		return e
+	}
+	t, er := time.Parse("2006-01-02", rs)
+	if er != nil {
+		return er
+	}
+	*d = TimeStamp(t.Unix())
+	return nil
+}
+
+type U struct {
+	D2 interface{}
+}
+type U2 struct {
 	Name string `json:"name"`
-	Age  int    `json:"age"`
+}
+type Cla struct {
+	Id int `json:"id"`
+}
+type J struct {
+	U2s  U2
+	Clas Cla
+}
+type J2 struct {
+	Js J
 }
 
-func f(arg interface{}) {
-	switch v := arg.(type) {
-	case float32, float64:
-		fmt.Println(v == 0.)
-	case int, int32, int64:
-		fmt.Println(v == 0)
-	}
+type Us struct{
+	Age int `json:"age"`
 }
-
-type User struct {
-	Age int
-}
-
-func X() (user *User) {
-	user.Age = 1
-	return
-}
-
 func main() {
-	var a = make([]string, 0, 5)
-	fmt.Println(len(a))
-	//var i float32 = 12.3
-	//fmt.Println(float32(i)<float32(5.3))
-	////var j time.Time
-	//var k struct{int}
-	//vT := reflect.TypeOf(k)
-	//fmt.Println(vT.Field(0).Type.String())
-	//
-	//fmt.Println(len(strings.Split("",":")))
-	//L:
-	//for i:=0;i<9;i++{
-	//	fmt.Print(i,"")
-	//	for j:=0;j<9;j++{
-	//		if j==1 {
-	//			fmt.Print(j,"")
-	//			continue L
-	//		}
-	//		fmt.Print(j,"")
-	//	}
-	//	if i==1{
-	//		break
-	//	}
-	//}
-	//fmt.Println(fmt.Sprintf("%v",[]interface{}{
-	//	1,"2",time.Now(),
-	//}))
-	//
-	//var i float32
-	//f(i)
-	//
-	//m:=make(map[string]string,5)
-	//sr:=make([]int,0,5)
-	//m["1"]="_1"
-	//m["2"]="_2"
-	//m["3"]="_3"
-	//m["4"]="_4"
-	//m["5"]="_5"
-	//fmt.Println(len(m))
-	//m["6"]="_6"
-	//fmt.Println(len(m))
-	//
-	//sr=append(sr, 1)
-	//sr=append(sr, 2)
-	//fmt.Println(len(sr),cap(sr))
-	//sr=append(sr, 3)
-	//sr=append(sr, 4)
-	//sr=append(sr, 5)
-	//fmt.Println(len(sr),cap(sr))
-	//sr=append(sr, 6)
-	//sr=append(sr, 7)
-	//fmt.Println(len(sr),cap(sr))
-
-}
-
-//func main() {
-//	//c := C{}
-//	//c.In = D{"ft",5}
-//	//b, er := json.Marshal(c)
-//	//if er != nil {
-//	//	fmt.Println(er.Error())
-//	//	return
-//	//}
-//	//fmt.Println(string(b))
-//	//
-//	//c.In = [2]D{
-//	//	{"ft1",7}, {"ft2",8},
-//	//}
-//	//b2, er := json.Marshal(c)
-//	//if er != nil {
-//	//	fmt.Println(er.Error())
-//	//	return
-//	//}
-//	//fmt.Println(string(b2))
-//	//
-//	//
-//	//rs := Query(10,[3]D{
-//	//	{"ft1",7}, {"ft2",8},{"ft3",9},
-//	//})
-//	//b3, er := json.Marshal(rs)
-//	//if er != nil {
-//	//	fmt.Println(er.Error())
-//	//	return
-//	//}
-//	//fmt.Println(string(b3))
-//	var f float32
-//	fmt.Println(f==0)
-//	in := 0.
-//	var tmp interface{} = float32(in)
-//	fmt.Println("float 0==0:", in == 0)
-//	fmt.Println("float -> interface{} -> float", tmp.(float32) == 0)
-//	switch v := tmp.(type) {
-//	case float32:
-//		fmt.Println("float -> interface -.type-> float", v == 0)
-//	}
-//}
-
-func Query(count int, in interface{}) interface{} {
-	tmp := struct {
-		Count   int         `json:"count"`
-		Results interface{} `json:"results"`
-	}{
-		Count:   count,
-		Results: in,
+	var u Us
+	e:=json.Unmarshal([]byte(`
+		{
+			"name":"ft",
+			"age":9
+		}
+		`),&u)
+	if e!=nil {
+		panic (e)
 	}
-	return tmp
+	fmt.Println(u)
 }
+
+
