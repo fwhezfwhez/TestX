@@ -35,7 +35,7 @@ func main(){
 	/*
 		m := new(sync.Mutex)
 		m.Lock()
-		userService.Update(user)
+		userService.Update(example_user)
 		m.Unlock()
 	 */
 	userService.Update(user)

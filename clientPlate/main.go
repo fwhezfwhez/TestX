@@ -392,7 +392,7 @@ func UserInsert() {
 	if true {
 		t1 := time.Now()
 		var content = fmt.Sprintf("userName=admin&password=123456&name=ft&phone=18985758498&email=145794@qq.com")
-		resp, err := http.Post(host+"v1/POST/user/create", "application/x-www-form-urlencoded", strings.NewReader(content))
+		resp, err := http.Post(host+"v1/POST/example_user/create", "application/x-www-form-urlencoded", strings.NewReader(content))
 		t2 := time.Now()
 		fmt.Println(t2.Sub(t1))
 		if err != nil {
@@ -500,7 +500,7 @@ func UserLogin() {
 
 		var content = fmt.Sprintf("userName=admin&password=123456")
 		t1 := time.Now()
-		resp, err := http.Post(host+"v1/POST/user/login", "application/x-www-form-urlencoded", strings.NewReader(content))
+		resp, err := http.Post(host+"v1/POST/example_user/login", "application/x-www-form-urlencoded", strings.NewReader(content))
 		Token = resp.Header.Get("Authorization")
 		fmt.Println(Token)
 		t2 := time.Now()

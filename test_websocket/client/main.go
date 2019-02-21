@@ -11,7 +11,7 @@ var url = "ws://127.0.0.1:8888/ws"
 
 func main() {
 	ws, err := websocket.Dial(url, "", origin)
-	websocket.DialConfig()
+	//websocket.DialConfig()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,7 +21,6 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("Send: %s\n", message)
-
 	message2 := []byte("第二条msg")
 	_, err = ws.Write(message2)
 	if err != nil {

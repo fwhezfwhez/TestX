@@ -87,7 +87,7 @@ func main() {
 		log.Fatal(err)
 	}
 	bounds := m.Bounds()
-	fmt.Println("color model of m:",m.ColorModel())
+	fmt.Println("color proto of m:",m.ColorModel())
 	// Calculate a 16-bin histogram for m's red, green, blue and alpha components.
 	//
 	// An image's bounds do not necessarily start at (0, 0), so the two loops start

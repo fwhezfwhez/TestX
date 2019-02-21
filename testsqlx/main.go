@@ -32,7 +32,7 @@ func main(){
 		}
 		switch crud {
 		case 1:
-			//_, err = db.Exec("insert into public.user(name,class_id) values($1,$2)", "Ft","5")
+			//_, err = db.Exec("insert into public.example_user(name,class_id) values($1,$2)", "Ft","5")
 			//SimplePanic(err)
 			_,err=db.Exec("insert into medium(mediumName,os,category,subcategory,intro,pkgName) values($1,$2,$3,$4,$5,$6)",
 				medium.MediumName,medium.Os,medium.Category,medium.SubCategory,medium.Intro,medium.PkgName)
@@ -40,14 +40,14 @@ func main(){
 				SimplePanic(err)
 			}
 		case 2:
-			//_, err = db.Exec("update public.user set name ='ftx' where name=$1", "ft")
+			//_, err = db.Exec("update public.example_user set name ='ftx' where name=$1", "ft")
 			//SimplePanic(err)
 			var a = make(map[string]string)
 			a["d"]="c"
 			fmt.Println(a["q"])
 
 		case 3:
-			_, err = db.Exec("delete from public.user where name=$1", "ftx")
+			_, err = db.Exec("delete from public.example_user where name=$1", "ftx")
 			SimplePanic(err)
 
 		case 4:
@@ -55,12 +55,12 @@ func main(){
 				Name string
 			}
 			var user []U = make([]U,0)
-			err = db.Select(&user,"select * from public.user where name = 'ft7'")
+			err = db.Select(&user,"select * from public.example_user where name = 'ft7'")
 			if err!=nil{
 				fmt.Println(err)
 			}
 			fmt.Println(user)
-			//_, err = db.Exec("select * from public.user WHERE name='ft7213213123'  limit 9 ")
+			//_, err = db.Exec("select * from public.example_user WHERE name='ft7213213123'  limit 9 ")
 			//SimplePanic(err)
 		}
 	}

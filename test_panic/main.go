@@ -1,20 +1,26 @@
 package main
 
-import "fmt"
-
-func init(){
-
-}
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	defer func(){
-		if r:=recover();r!=nil{
-			fmt.Println(r)
-		}
+    defer func(){
+    	fmt.Println(2)
 	}()
-	f()
+	defer func(){
+		fmt.Println(1)
+	}()
+	go func (){
+		defer func(){
+			fmt.Println(2)
+		}()
+		defer func(){
+			fmt.Println(1)
+		}()
+		panic(0)
+	}()
+    time.Sleep(5 * time.Second)
 }
 
-func f(){
-	panic(111)
-}

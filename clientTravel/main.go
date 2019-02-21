@@ -26,7 +26,7 @@ func main(){
 func FilInfo(){
 	t1 := time.Now()
 	var content  = fmt.Sprintf("name=fff&phone=15874454847&province=江西&city=南昌&address=aaa&cid=1")
-	resp, err := http.Post("http://localhost:8087/travel/user/create", "application/x-www-form-urlencoded", strings.NewReader(content))
+	resp, err := http.Post("http://localhost:8087/travel/example_user/create", "application/x-www-form-urlencoded", strings.NewReader(content))
 	t2 := time.Now()
 	fmt.Println(t2.Sub(t1))
 	if err!=nil {

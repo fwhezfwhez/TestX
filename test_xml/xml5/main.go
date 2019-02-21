@@ -8,7 +8,7 @@ import (
 )
 
 type Text struct {
-	XMLName         xml.Name `xml:"xml"`
+	XMLName      xml.Name `xml:"xml"`
 	ToUserName   string   `xml:"ToUserName"`
 	FromUserName string   `xml:"FromUserName"`
 	CreateTime   string   `xml:"CreateTime"`
@@ -18,15 +18,10 @@ type Text struct {
 
 type VXXML struct {
 	XMLName xml.Name `xml:"xml"`
-	Name string `xml:"xml"`
+	Name    string   `xml:"xml"`
 }
 
 func main() {
-	vx :=VXXML{
-		Name:"ft",
-	}
-	result1, err := xml.MarshalIndent(vx, "", "  ")
-	fmt.Println(string(result1))
 	reply := Text{
 		ToUserName:   "to",
 		FromUserName: "from",
@@ -41,4 +36,11 @@ func main() {
 	}
 	fmt.Println(string(result))
 
+	var m map[string]interface{}
+	e := xml.Unmarshal(result, &m)
+	if e != nil {
+		fmt.Println(e.Error())
+		return
+	}
+	fmt.Println(m)
 }

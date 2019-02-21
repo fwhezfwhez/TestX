@@ -34,11 +34,11 @@ func main() {
 	router.POST("/TestBinding",T)
 	router.GET("/TestBindQuery",BQ)
 
-	router.GET("/user/:uname/:id",TP)
-	router.PUT("/user/:uname/:id",TP)
+	router.GET("/example_user/:uname/:id",TP)
+	router.PUT("/example_user/:uname/:id",TP)
 	//router.POST("/TP",TP)
 
-	router.DELETE("/user/:uname/:id/delete",TP)
+	router.DELETE("/example_user/:uname/:id/delete",TP)
 	router.GET("/timeout",TT)
 
 

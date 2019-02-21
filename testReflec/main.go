@@ -53,12 +53,12 @@ func main() {
 	//fmt.Println("**",t2 == nil)
 	////fmt.Println(add(""))
 	//var id float32= 55
-	//user := User{id,"ft","32"}
+	//example_user := User{id,"ft","32"}
 	//
-	//fmt.Println(reflect.ValueOf(user).Field(0))
-	//fmt.Println(reflect.TypeOf(user).Field(0).Name)
+	//fmt.Println(reflect.ValueOf(example_user).Field(0))
+	//fmt.Println(reflect.TypeOf(example_user).Field(0).Name)
 	//
-	////vtype := reflect.TypeOf(user)
+	////vtype := reflect.TypeOf(example_user)
 	//vType :=reflect.TypeOf(1)
 	//vValue := reflect.ValueOf(1)
 	//fmt.Println(vValue.Field(0).Type().Name)
@@ -78,19 +78,19 @@ func main() {
 	////argIn[0] = reflect.ValueOf(1)
 	////fmt.Println(vValue.Call(argIn)[0].Int())
 	//
-	//do(&user)
-	////_v:= reflect.ValueOf(&user)
+	//do(&example_user)
+	////_v:= reflect.ValueOf(&example_user)
 	////fmt.Println(_v.CanSet())
 	////_v = _v.Elem()
 	////fmt.Println(_v.CanSet())
 	////_v.Field(0).SetString("6")
-	////fmt.Println(user)
+	////fmt.Println(example_user)
 	var a = make(map[string]interface{},0)
 	fmt.Println(reflect.TypeOf(a).String())
 
 
 
-	//value :=reflect.ValueOf (user)
+	//value :=reflect.ValueOf (example_user)
 	//fmt.Println(value)
 	//
 	//des := reflect.Indirect(value)
@@ -104,7 +104,7 @@ func main() {
 	//fmt.Println(v2)
 	//
 	//
-	//_type :=reflect.TypeOf(user)
+	//_type :=reflect.TypeOf(example_user)
 	//fmt.Println(_type)
 	//
 	// var tagValue =_type.Field(2).Tag.Get("Fuck")
@@ -115,7 +115,7 @@ func main() {
 	////fmt.Println(type_len)
 	////
 	////
-	////Check(user)
+	////Check(example_user)
 	//
 	//var subStrings = make([]string,1)
 	//subStrings = strings.Split("afdasf",",")

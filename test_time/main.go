@@ -19,6 +19,7 @@ func main() {
 	fmt.Println(str_time)
 
 	//将字符串转换成时间戳
+
 	Time, _ := time.ParseInLocation(startTime, "2018-03-19 09:02:33",time.Local)
 	timestamp := Time.Unix()
 	fmt.Println(timestamp)

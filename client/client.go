@@ -13,14 +13,15 @@ type Slot struct{
 	SlotName string `json:"slot_name,omitempty"`
 }
 func main() {
-	//TestAdd()
-	//TestUpdate()
-	//TestQuery()
-	//TestDelete()
-	_,e :=http.Get("http://localhost:8090/testroutine/")
-	if e !=nil {
-		panic(e)
-	}
+
+	////TestAdd()
+	////TestUpdate()
+	////TestQuery()
+	////TestDelete()
+	//_,e :=http.Get("http://localhost:8090/testroutine/")
+	//if e !=nil {
+	//	panic(e)
+	//}
 }
 
 func TestAdd(){

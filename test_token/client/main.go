@@ -40,7 +40,7 @@ func main() {
 		fmt.Println(er.Error())
 		return
 	}
-	req,err:=http.NewRequest("DELETE","http://localhost:8088/user/{fttt}/{5}/delete",bytes.NewReader(usJS))
+	req,err:=http.NewRequest("DELETE","http://localhost:8088/example_user/{fttt}/{5}/delete",bytes.NewReader(usJS))
 	req.Header.Set("Content-Type", "application/json")
 	if err!=nil{
 		fmt.Println(err)

@@ -17,15 +17,15 @@ func main() {
 	//fmt.Println(r.MatchString("Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E302 MicroMessenger/6.6.6 NetType/4G Language/zh_CN"))
    //
    //
-	//user := User{"ft","9"}
-	//vType :=reflect.TypeOf(user)
+	//example_user := User{"ft","9"}
+	//vType :=reflect.TypeOf(example_user)
 	//fmt.Println(vType.Field(0).Name=="1")
    //
-	//user =User{
+	//example_user =User{
 	//"ft",
 	//"2",
 	//}
-	//log.Println(user)
+	//log.Println(example_user)
 	//fmt.Println(5/2.)
 	//fmt.Println(len([][]string{{"1","2","3"},{"4","5","6"}}))
    //

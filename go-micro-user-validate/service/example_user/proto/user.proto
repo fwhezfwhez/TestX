@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+service User {
+	rpc GetToken(Request) returns (Response) {}
+	rpc GetUserName(Request) returns (UserName) {}
+}
+
+message Request {
+	string username = 1;
+	string password = 2;
+}
+
+message Response {
+    HttpResponse httpResponse = 1;
+	string token = 3;
+	string exp = 4;
+}
+
+message UserName{
+    HttpResponse httpResponse = 1;
+    string message = 2;
+    string username = 3;
+}
+message HttpResponse {
+        int32 statusCode = 1;
+        map<string, Pair> header = 2;
+        string body = 3;
+}
+message Pair {
+	string key = 1;
+	repeated string values = 2;
+}
+
+message Wrap {
+    HttpResponse httpResponse = 1;
+}
