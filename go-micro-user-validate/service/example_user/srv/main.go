@@ -34,8 +34,8 @@ func main() {
 
 	//// or
 	//user.RegisterUserHandler(userService.Server(), new(User),
-	//	api.POST("/user/token/", "User.GetToken"),
-	//	api.GET("/user/username/", "User.GetUserName"),
+	//	api2.POST("/user/token/", "User.GetToken"),
+	//	api2.GET("/user/username/", "User.GetUserName"),
 	//)
 	//
 	// or
@@ -58,7 +58,6 @@ func main() {
 	//r.GET("/user/username/", "User.GetUserName")
 	//
 	//user.RegisterUserHandler(userService.Server(), new(User), r...)
-
 	if er := userService.Run(); er != nil {
 		panic(er)
 	}

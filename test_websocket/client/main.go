@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang.org/x/net/websocket"
+	"io"
 	"log"
 )
 
@@ -10,32 +11,42 @@ var origin = "http://127.0.0.1:8080/"
 var url = "ws://127.0.0.1:8888/ws"
 
 func main() {
+	log.SetFlags(log.LstdFlags | log.Llongfile)
 	ws, err := websocket.Dial(url, "", origin)
 	//websocket.DialConfig()
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	message := []byte("hello, world!你好")
 	_, err = ws.Write(message)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Printf("Send: %s\n", message)
-	message2 := []byte("第二条msg")
-	_, err = ws.Write(message2)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Send: %s\n", message2)
 
-	var msg = make([]byte, 512)
-	m, err := ws.Read(msg)
-	if err != nil {
-		log.Fatal(err)
+	var buffer = make([]byte, 512)
+	var msg = make([]byte,0,512)
+	var max int
+	var sum int
+	for {
+		m, err := ws.Read(buffer)
+		fmt.Println(max)
+		if err != nil {
+			if err == io.EOF{
+				break
+			}
+			log.Fatal(err)
+		}
+
+		msg = append(msg, buffer[:m]...)
+		sum += m
+		if sum >= max -4 {
+			break
+		}
 	}
-	fmt.Printf("Receive: %s\n", msg[:m])
+	fmt.Println(len(msg))
 	//ws.Close() //关闭连接}
-	select {}
 
 	//var msg2= make([]byte, 512)
 	//m2, err2 := ws.Read(msg2)

@@ -30,7 +30,11 @@ func handler(conn *websocket.Conn) {
 			}
 		}
 		fmt.Println("Received from client: " + string(receive))
-		reply := "你好，收到了你的请求"
+
+		var reply = make([]byte,2049)
+		reply[0] = 1
+		reply[2048] = 1
+		fmt.Println(len(reply))
 		if err = websocket.Message.Send(conn, reply); err != nil {
 			fmt.Println("send err:", err.Error())
 			break

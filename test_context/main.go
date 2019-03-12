@@ -3,47 +3,63 @@ package main
 import (
 	"context"
 	"fmt"
-	"runtime"
 	"sync"
 	"time"
 )
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
-	// with cancel
-	ctx, cancel := context.WithCancel(context.Background())
-	ctx2 := context.WithValue(ctx, "user_id", "ft")
+	ctx,_ := context.WithTimeout(context.Background(), 5 *time.Second)
 	go func(ctx context.Context) {
-		for {
-			select {
-			case <-ctx.Done():
-				fmt.Println("routine1 stops")
-
-				return
-			default:
-				fmt.Println("1")
-				time.Sleep(1 * time.Second)
+	    for{
+	    	select{
+	    	  case <-ctx.Done():
+	    	  	fmt.Println("5秒到了，时间到")
+	    	  	return
+	    	  default:
+	    	  	for{
+	    	  		select{}
+				}
 			}
 		}
 	}(ctx)
+	time.Sleep(20 *time.Second)
+    fmt.Println("20秒过去了")
 
-	go func(ctx context.Context) {
-		for {
-			select {
-			case <-ctx.Done():
-				fmt.Println("routine2 stops")
-				return
-			default:
-				fmt.Println("2")
-				time.Sleep(1 * time.Second)
-			}
-		}
-	}(ctx2)
-
-	time.Sleep(5*time.Second)
-
-	cancel()
-	time.Sleep(5 * time.Second)
+	//runtime.GOMAXPROCS(runtime.NumCPU())
+	//// with cancel
+	//ctx, cancel := context.WithCancel(context.Background())
+	//ctx2 := context.WithValue(ctx, "user_id", "ft")
+	//go func(ctx context.Context) {
+	//	for {
+	//		select {
+	//		case <-ctx.Done():
+	//			fmt.Println("routine1 stops")
+	//
+	//			return
+	//		default:
+	//			fmt.Println("1")
+	//			time.Sleep(1 * time.Second)
+	//		}
+	//	}
+	//}(ctx)
+	//
+	//go func(ctx context.Context) {
+	//	for {
+	//		select {
+	//		case <-ctx.Done():
+	//			fmt.Println("routine2 stops")
+	//			return
+	//		default:
+	//			fmt.Println("2")
+	//			time.Sleep(1 * time.Second)
+	//		}
+	//	}
+	//}(ctx2)
+	//
+	//time.Sleep(5*time.Second)
+	//
+	//cancel()
+	//time.Sleep(5 * time.Second)
 	//go watch(ctx, "【监控1】")
 	//go watch(ctx, "【监控2】")
 	//go watch(ctx, "【监控3】")

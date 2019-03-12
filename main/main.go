@@ -1,36 +1,25 @@
 package main
 
 import (
+	"encoding/binary"
 	"fmt"
-	"time"
 )
 
+const (
+	B = 1
+	KB = 1024 * 1
+	MB = 1024 * 1024 *1
+)
 func main() {
-fmt.Println([]byte{})
-	fmt.Println([]byte(""))
-
-	fmt.Println(int(int32(50)))
+	var a  = make([]byte,2)
+	binary.BigEndian.PutUint16(a ,uint16(8))
+	fmt.Println(a)
+	rs :=binary.BigEndian.Uint16(a)
+	fmt.Println(rs)
 }
 
-func GetMondayDate(today time.Time) time.Time {
-	if today.IsZero() {
-		today = time.Now()
-	}
-	switch today.Weekday() {
-	case time.Monday:
-		return today
-	case time.Tuesday:
-		return today.Add(-24 * time.Hour)
-	case time.Wednesday:
-		return today.Add(-2 * 24 * time.Hour)
-	case time.Thursday:
-		return today.Add(-3 * 24 * time.Hour)
-	case time.Friday:
-		return today.Add(-4 * 24 * time.Hour)
-	case time.Saturday:
-		return today.Add(-5 * 24 * time.Hour)
-	case time.Sunday:
-		return today.Add(-6 * 24 * time.Hour)
-	}
-	return time.Now()
+
+func WriteInt16(buf []byte, n int16) {
+	buf[0] = byte(n & 0xff)
+	buf[1] = byte((n >> 8) & 0xff)
 }

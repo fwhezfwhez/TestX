@@ -1,27 +1,23 @@
 package main
 
-import (
-	"runtime"
-	"fmt"
-	"time"
-	"sync"
-)
-
-var a int =0
+import "time"
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
-	for i:=0;i<100;i++{
-		go AddA()
-	}
-	time.Sleep(10*time.Second)
-	//runtime.Gosched()
-}
-func AddA(){
-	mutex :=&sync.Mutex{}
-	mutex.Lock()
-	a++
-	mutex.Unlock()
-	fmt.Println(a)
+	var m = make(map[string]interface{}, 0)
+	m["2"] = 2
+	go func() {
+		for {
+			//m ["1"] = 1
+			 m["1"] =1
+		}
+	}()
+
+	go func() {
+		for {
+			 m["1"] =2
+		}
+	}()
+
+	time.Sleep(20 * time.Second)
 }
 
