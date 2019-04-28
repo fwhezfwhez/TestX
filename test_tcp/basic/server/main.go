@@ -2,18 +2,15 @@ package main
 
 import (
 	"fmt"
+	"github.com/fwhezfwhez/errorx"
 	"io"
 	"net"
 	"os"
 )
 
 func main() {
-
-	service := ":1201"
-	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
-	checkError(err)
-
-	listener, err := net.ListenTCP("tcp", tcpAddr)
+	fmt.Println("tcp run on localhost:7123")
+	listener, err := net.Listen("tcp", ":7123")
 	checkError(err)
 
 	for {
@@ -22,7 +19,6 @@ func main() {
 			fmt.Println(err.Error())
 			continue
 		}
-		// run as a goroutine
 		go handleClient(conn)
 	}
 }
@@ -30,36 +26,25 @@ func main() {
 func handleClient(conn net.Conn) {
 	// close connection on exit
 	defer conn.Close()
-
-	var buf [512]byte
-	var err error
-	var n int
+	var oneRead []byte
+	var e error
 	for {
-		// read upto 512 bytes
-		n, err = conn.Read(buf[0:])
-		if err != nil {
-			if err == io.EOF{
-				return
+		oneRead, e = readOnce(conn)
+		if e != nil {
+			if e == io.EOF {
+				break
 			}
-			fmt.Println(err.Error())
+			fmt.Println(errorx.Wrap(e).Error())
 			return
 		}
-		fmt.Println("received:", string(buf[0:n]))
-		// write the n bytes read
+		fmt.Println("receive from client:", string(oneRead))
+
 		_, err2 := conn.Write([]byte("reply from server"))
 
 		if err2 != nil {
 			fmt.Println(err2.Error())
 			return
 		}
-
-		err =conn.Close()
-		if err != nil {
-
-			fmt.Println(err.Error())
-			return
-		}
-		fmt.Println(conn)
 	}
 }
 
@@ -68,4 +53,18 @@ func checkError(err error) {
 		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
 		os.Exit(1)
 	}
+}
+
+func readOnce(reader io.Reader) ([]byte, error) {
+	var buffer = make([]byte, 512, 512)
+	var n int
+	var e error
+
+	n, e = reader.Read(buffer)
+	if e != nil {
+
+		return nil, e
+	}
+
+	return buffer[0:n], nil
 }

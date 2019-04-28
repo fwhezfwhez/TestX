@@ -1,52 +1,54 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"io"
 	"log"
 	"net"
 )
 
-func init() {
-	log.SetFlags(log.LstdFlags | log.Llongfile)
-}
-func doTask(conn net.Conn) {
-	//
-	//conn.
-}
+var receive = make(chan []byte, 512)
+
 func main() {
-	hostInfo := "127.0.0.1:1201"
+	hostInfo := "127.0.0.1:7123"
 	conn, err := net.Dial("tcp", hostInfo)
-	if conn !=nil {
+	if conn != nil {
 		defer conn.Close()
 	}
 	if err != nil {
 		log.Println(err.Error())
 		return
 	}
+	go func() {
+		for {
+			recv, e := Receive(conn)
+			if e != nil {
+				if e == io.EOF {
+					break
+				}
+				panic(e)
+			}
+			select {
+			case rs := <-recv:
+				fmt.Println("receive message from server side:", string(rs))
+			}
+		}
+	}()
+
 	conn.Write([]byte("request from client"))
-	rs, err := bufio.NewReader(conn).ReadString('\n')
-	fmt.Println("rs:", rs)
-	if err != nil {
-		log.Println(err.Error())
-		return
+
+	select {}
+}
+
+func Receive(conn net.Conn) (<-chan []byte, error) {
+	var buffer = make([]byte, 512, 512)
+	var n int
+	var e error
+	n, e = conn.Read(buffer)
+	if e != nil {
+		return nil, e
 	}
 
-	//conn.Write([]byte("helloWorld2"))
-	//rs, err = bufio.NewReader(conn).ReadString('\n')
-	//fmt.Println(rs)
-	//if err != nil {
-	//	log.Println(err.Error())
-	//	return
-	//}
-	//for{
-	//	conn.Write([]byte("helloWorld"))
-	//	rs, err := bufio.NewReader(conn).ReadString('\n')
-	//	if err != nil {
-	//		log.Println(err.Error())
-	//		return
-	//	}
-	//	fmt.Println(rs)
-	//}
-
+	receive <- buffer[0:n]
+	return receive, nil
 }

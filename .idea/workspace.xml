@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e9da86-63e3-4e9d-9e62-b2c42606b0b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_buffer/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_helloworld/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_helloworld/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_file_server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_flag/X.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_flag/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_fmt/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_form/srv/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_jwt/util_jwt/init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_jwt/util_jwt/jwt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_jwt/util_jwt/jwt_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_rebase/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_tcp/case2/shop/shop_prop_config_list_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_toml/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_udp/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_udp/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_vx/dic/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_vx/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_vx_openid/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/debug/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/demo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_bigEnd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_docker_helloworld/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_docker_helloworld/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_escape/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_escape/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_form/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_form/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_gorm/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_gorm/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_micro2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_micro2/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_pid/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_pid/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_retype/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_retype/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_tcp/case2/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/case2/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_tcp/case3/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/case3/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_time/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_time/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_websocket/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_websocket/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_xml/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_xml/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_xml/xml2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_xml/xml2/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_tcp/basic/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/basic/client/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_tcp/basic/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/basic/server/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +41,7 @@
         <counts>
           <entry key="Dockerfile" value="2" />
           <entry key="Makefile" value="1" />
-          <entry key="go" value="591" />
+          <entry key="go" value="598" />
           <entry key="hello_world_proto" value="1" />
           <entry key="json" value="2" />
           <entry key="log" value="3" />
@@ -97,7 +54,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="591" />
+          <entry key="Go" value="598" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="38" />
         </counts>
@@ -105,7 +62,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="29" />
-          <entry key="go" value="49225" />
+          <entry key="go" value="50599" />
           <entry key="md" value="299" />
           <entry key="proto" value="516" />
           <entry key="toml" value="20" />
@@ -114,13 +71,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="49225" />
+          <entry key="Go" value="50599" />
           <entry key="PLAIN_TEXT" value="874" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
         <counts>
-          <entry key=".append" value="4" />
+          <entry key=".append" value="5" />
           <entry key=".len" value="4" />
           <entry key=".p" value="1" />
         </counts>
@@ -129,41 +86,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_udp/server/main.go">
+        <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-              <folding>
-                <element signature="e#14#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/go_1.12/src/net/net.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="302" column="5" selection-start-line="302" selection-start-column="5" selection-end-line="302" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/go_1.12/src/net/udpsock.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_udp/client/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="348">
+              <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -192,7 +128,6 @@
       <find>WriteHeapProfile</find>
       <find>helloworld.pb.go</find>
       <find>gc</find>
-      <find>Close</find>
       <find>Close(</find>
       <find>receive err</find>
       <find>Call(</find>
@@ -205,6 +140,7 @@
       <find>handleError</find>
       <find>MD5</find>
       <find>Timeout</find>
+      <find>Close</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="E:\go_1.12" />
@@ -214,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/go-micro-user-validate/service/example_user/proto/httpResponse/httpResponse.proto.go" />
-        <option value="$PROJECT_DIR$/go-micro-user-validate/service/example_user/proto/httpResponse/httpResponse.proto" />
         <option value="$PROJECT_DIR$/go-micro-user-validate/service/example_user/proto/proto_test.go" />
         <option value="$PROJECT_DIR$/go-micro-user-validate/service/example_user/proto/httpResponse/httpResponse_test.go" />
         <option value="$PROJECT_DIR$/go-micro-user-validate/service/example_user/proto/httpResponse/test.proto" />
@@ -263,8 +197,10 @@
         <option value="$PROJECT_DIR$/test_micro2/main.go" />
         <option value="$PROJECT_DIR$/test_gorm/main.go" />
         <option value="$PROJECT_DIR$/debug/main.go" />
-        <option value="$PROJECT_DIR$/test_udp/client/main.go" />
         <option value="$PROJECT_DIR$/test_udp/server/main.go" />
+        <option value="$PROJECT_DIR$/test_udp/client/main.go" />
+        <option value="$PROJECT_DIR$/test_tcp/basic/server/main.go" />
+        <option value="$PROJECT_DIR$/test_tcp/basic/client/main.go" />
       </list>
     </option>
   </component>
@@ -330,6 +266,31 @@
               <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_X" type="462c0819:PsiDirectoryNode" />
               <item name="test_gorm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_X" type="462c0819:PsiDirectoryNode" />
+              <item name="test_tcp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_X" type="462c0819:PsiDirectoryNode" />
+              <item name="test_tcp" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_X" type="462c0819:PsiDirectoryNode" />
+              <item name="test_tcp" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_X" type="462c0819:PsiDirectoryNode" />
+              <item name="test_tcp" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test_X" type="b2602c69:ProjectViewProjectNode" />
@@ -429,16 +390,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (4)">
-    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test_gorm/main.go" />
-      <package value="test_X" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go (3)">
     <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -452,7 +404,7 @@
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test_xml/xml2/main.go" />
+      <filePath value="$PROJECT_DIR$/test_tcp/basic/client/main.go" />
       <package value="test_X" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -475,20 +427,29 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/test_tcp/basic/server/main.go" />
+      <package value="test_X" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go (5)" />
-      <item itemvalue="Go Build.go build main.go (3)" />
-      <item itemvalue="Go Build.go build main.go (1)" />
       <item itemvalue="Go Build.go build main.go (2)" />
       <item itemvalue="Go Build.go build main.go (4)" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build main.go (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (3)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (5)" />
-        <item itemvalue="Go Build.go build main.go (1)" />
-        <item itemvalue="Go Build.go build main.go (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -565,20 +526,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/go1.9/src/net/http/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19422">
-          <caret line="760" column="57" selection-start-line="760" selection-start-column="24" selection-end-line="760" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_form/srv/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_retype/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -717,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_tcp/case2/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_tcp/case2/shop/shop_prop_config_list_test.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -745,13 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
           <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_tcp/case1/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -781,13 +714,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_tcp/case1/client/main.go">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_tcp/case3/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_tcp/case3/client/main.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -893,20 +819,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_udp/client/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_udp/server/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="530">
           <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding>
             <element signature="e#14#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_udp/client/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcp/case3/server/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcp/case2/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcp/case1/server/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
         </state>
       </provider>
     </entry>
