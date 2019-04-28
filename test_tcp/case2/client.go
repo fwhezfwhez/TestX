@@ -3,10 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"golang.org/x/protobuf/proto"
 	"log"
 	"net"
 	"test_X/test_tcp/case2/pb"
+	"zonst/qipai/protocolutil"
 )
 
 func init() {
@@ -15,24 +15,27 @@ func init() {
 func main() {
 	hostInfo := "0.0.0.0:8113"
 	conn, err := net.Dial("tcp", hostInfo)
-	if conn !=nil {
+	if conn != nil {
 		defer conn.Close()
 	}
 	if err != nil {
 		log.Println(err.Error())
 		return
 	}
-	helloRequest:= pb.HelloRequest{
+	helloRequest := pb.HelloRequest{
 		MessageId: int32(999),
-		Name: "fengtao",
+		Name:      "fengtao",
+	}
+	header := &protocolutil.ClientHeader{
+		MessageType: protocolutil.ClientRequestMessageType,
+		DestID:      0,
+		MessageID:   uint16(helloRequest.MessageId),
 	}
 
-	buf ,e:=proto.Marshal(&helloRequest)
-	if e!=nil {
-		log.Println(e.Error())
-		return
-	}
-	conn.Write([]byte(buf))
+	packet := protocolutil.NewPacket(header)
+	packet.SetContent(&helloRequest)
+	buf := packet.Serialize()
+	conn.Write(buf)
 	rs, err := bufio.NewReader(conn).ReadString('\n')
 	fmt.Println("rs:", rs)
 	if err != nil {

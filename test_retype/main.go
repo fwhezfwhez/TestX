@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"strings"
+)
 type B []byte
 type S string
 func main() {
@@ -11,6 +15,12 @@ func main() {
 	//var s = S("world")
 	//SS(s)
 	//SSr(string("world"))
+	var a *int
+
+	fmt.Println(reflect.TypeOf(a).Kind().String())
+
+	arr := strings.Split("", ",")
+	fmt.Println(arr[0]=="")
 }
 
 func P(b []byte){

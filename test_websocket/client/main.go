@@ -20,6 +20,9 @@ func main() {
 
 	message := []byte("hello, world!你好")
 	_, err = ws.Write(message)
+	_, err = ws.Write(message)
+	_, err = ws.Write(message)
+	_, err = ws.Write(message)
 	if err != nil {
 		log.Fatal(err)
 	}

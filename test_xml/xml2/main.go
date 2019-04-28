@@ -1,6 +1,5 @@
 package main
 
-
 import (
 	"encoding/xml"
 	"fmt"
@@ -22,6 +21,9 @@ type server struct {
 
 
 func main() {
+	var a = make([]int,0)
+	fmt.Println(a[:0])
+
 	v := &Servers{Version: "1"}
 	v.Svs = append(v.Svs, server{"Shanghai_VPN", "127.0.0.1"})
 	v.Svs = append(v.Svs, server{"Beijing_VPN", "![CDATA[127.0.0.1]]"})

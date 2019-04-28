@@ -15,7 +15,6 @@ func main() {
 		micro.Name("go.micro.srv.test_micro2"),
 		micro.Version("latest"),
 	)
-
 	// Initialise service
 	service.Init()
 

@@ -1,23 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println(f())
+fmt.Println(int32(int64(4)))
+}
+//
+//func main() {
+//	runtime.GOMAXPROCS(runtime.NumCPU())
+//	var wg = sync.WaitGroup{}
+//	for i:=0;i<60000;i++ {
+//		wg.Add(1)
+//		go func() {
+//			defer wg.Done()
+//			var j int32 = 400
+//			_ = ToInt32(j)
+//			_ = ToString(strconv.Itoa(int(j)))
+//		}()
+//	}
+//	wg.Wait()
+//}
+
+// 正常情况
+func ToInt32(i int32) int32{
+	return i
 }
 
-func f()string{
-	var tmp string
-	for i:=1;i<100;i++{
-		tmp += "&"
-	}
-	return tmp
+func ToInt32Ptr(i int32) *int32{
+	return &i
 }
 
-func f2()*string{
-	var tmp string
-	for i:=1;i<100;i++{
-		tmp += "&"
-	}
-	return &tmp
+func ToStringPtr(i string) *string{
+	return &i
+}
+
+func ToString(i string) string{
+	return i
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"strconv"
 	"time"
 	"fmt"
@@ -10,17 +11,31 @@ const (
 	startTime = "2006-01-02 15:04:05" //时间起点，固定
 )
 func main() {
+	var jt time.Time
+	e:=json.Unmarshal([]byte(`2019/04/02`),&jt)
+	if e!=nil {
+		panic(e)
+	}
+	fmt.Println(jt)
 
+	basic,_ := time.Parse("2006-01-02 15:04:05", "2006-01-02 15:04:05")
+	fmt.Println(basic)
+	t1:= time.Now()
+	t2 := t1.Add(24*time.Hour)
+	fmt.Println(t1.Sub(t2).Seconds())
+
+	now,_:=json.Marshal(time.Now().Local())
+	fmt.Println(string(now))
 	//将string转换成int64
-	timestampInt64, _ := strconv.ParseInt("1521421353", 10, 64)
+	timestampInt64, _ := strconv.ParseInt("0", 10, 64)
 	fmt.Println(timestampInt64)
 
-	str_time := time.Unix(timestampInt64, 0).Format("2006-01-02 15:04:05")
+	str_time := time.Unix(timestampInt64, 0)
 	fmt.Println(str_time)
 
 	//将字符串转换成时间戳
 
-	Time, _ := time.ParseInLocation(startTime, "2018-03-19 09:02:33",time.Local)
+	Time, _ := time.ParseInLocation(startTime, "2019-04-09 18:09:14.3224719 +0800 CST m=+0.002997300",time.Local)
 	timestamp := Time.Unix()
 	fmt.Println(timestamp)
 	//fmt.Println("k:",Time)

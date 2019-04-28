@@ -1,0 +1,7 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("\n goroutine 29 [running]:\nruntime/debug.Stack(0xc42021c460, 0xe2f0eb, 0x1c)\n\tE:/go1.9/src/runtime/debug/stack.go:24 +0xa7\nshangraomajiang/util/common.SaveUserError(0x133d2a0, 0xc42021c460, 0x0, 0x0, 0x0)\n\tG:/go_workspace/GOPATH/src/shangraomajiang/util/common/tools.go:267 +0x1a8f\nshangraomajiang/control/pay/payService.TCPPayDiamondBalance.func2(0x133d2a0, 0xc42021c460)\n\tG:/go_workspace/GOPATH/src/shangraomajiang/control/pay/payService/tcp_service.go:45 +0x82\nshangraomajiang/control/pay/payService.TCPPayDiamondBalance(0xc420c64f00, 0xc420472230, 0x133eca0, 0xc420184f00, 0xc420184f80, 0xc420bf8700)\n\tG:/go_workspace/GOPATH/src/shangraomajiang/control/pay/payService/tcp_service.go:79 +0xdd0\nmain.OnMessageCallbackWithContext(0xc420472230, 0x133eca0, 0xc420184f00, 0xd0c3a0)\n\tG:/go_workspace/GOPATH/src/shangraomajiang/main.go:224 +0x556\nzonst/qipai/protocolutil.(*Handler).OnMessage(0xc4201f2740, 0xc420472230, 0x133eca0, 0xc420184f00, 0xc4204b96e0)\n\t/Users/lt/golang/own/src/zonst/qipai/protocolutil/handler.go:35 +0x4d\nzonst/eagle.(*Conn).handleLoop(0xc420472230)\n\t/Users/echo/go/src/zonst/eagle/conn.go:200 +0x19c\nzonst/eagle.(*Conn).(zonst/eagle.handleLoop)-fm()\n\t/Users/echo/go/src/zonst/eagle/conn.go:145 +0x2a\nzonst/eagle.(*Conn).initLoop.func1(0xc420472230, 0xc4203ce0a0)\n\t/Users/echo/go/src/zonst/eagle/conn.go:220 +0x4d\ncreated by zonst/eagle.(*Conn).initLoop\n\t/Users/echo/go/src/zonst/eagle/conn.go:210 +0x68\n")
+}

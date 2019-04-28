@@ -1,11 +1,25 @@
 package main
 
 import (
-
+	"encoding/json"
 	"fmt"
-
-	"errors"
+	"reflect"
 )
+
+type Animal struct{
+	Name string `json:"name"`
+	Sex int `json:"sex"`
+	Age int `json:"age"`
+	Vtype int `json:"type"`
+}
+type Cat struct{
+	Animal
+	Color string
+}
+type Dog struct{
+	Animal
+	TeethNum int
+}
 
 func main() {
 
@@ -24,7 +38,13 @@ func main() {
 	//<-sigTERM
 	//fmt.Print("killed")
 
+	var dog1 = Dog{
+		TeethNum: 12,
+	}
+	dog1.Age = 5
+	buf, _ :=json.Marshal(dog1)
+	fmt.Println( string(buf))
 
-
-	fmt.Println(fmt.Sprintf("%v,%v,%v",errors.New("错误1"),errors.New("错误2"),errors.New("错误3")))
+	t :=reflect.TypeOf(dog1)
+	fmt.Println(t.NumField())
 }

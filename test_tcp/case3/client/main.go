@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"log"
 	"net"
 )
@@ -35,15 +34,17 @@ func SendMessage(con net.Conn, msg []byte) error {
 
 func ReceiveMessage(con net.Conn) {
 	// receiving a message
-	inBytes := make([]byte, 0, 1000)
+	var inBytes []byte
 	var b = make([]byte, 512)
 	for {
+		//inBytes = inBytes[:0]
+		inBytes = make([]byte, 0, 1000)
 		// bufsize 1024, read bufsize bytes each time
 		res, err := con.Read(b)
 		if err != nil {
-			if err == io.EOF {
-				break
-			}
+			//if err == io.EOF {
+			//	break
+			//}
 			fmt.Println(err.Error())
 			break
 		}
@@ -62,12 +63,20 @@ func getConn() net.Conn {
 func main() {
 	NewClient(20, "localhost:8101")
 	con := <-tcpPool
+	go ReceiveMessage(con)
+
+
 	e := SendMessage(con, []byte("hello, i am client"))
 	if e != nil {
 		fmt.Println(e.Error())
 		return
 	}
-	go ReceiveMessage(con)
+	e = SendMessage(con, []byte("hello, i am client"))
+	if e != nil {
+		fmt.Println(e.Error())
+		return
+	}
+
 	var msg string
 	for {
 		select {
