@@ -30,12 +30,12 @@ func main() {
 			}
 			select {
 			case rs := <-recv:
-				fmt.Println("receive message from server side:", string(rs))
+				fmt.Println(fmt.Sprintf("receive message from server side: %v", rs))
 			}
 		}
 	}()
 
-	conn.Write([]byte("request from client"))
+	conn.Write([]byte(NewByte(1,2,3,4,5,6)))
 
 	select {}
 }
@@ -51,4 +51,10 @@ func Receive(conn net.Conn) (<-chan []byte, error) {
 
 	receive <- buffer[0:n]
 	return receive, nil
+}
+
+func NewByte(byts ...byte) []byte {
+	var rs = make([]byte, 0 , 512)
+	rs = append(rs, byts...)
+	return rs
 }

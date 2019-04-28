@@ -37,9 +37,10 @@ func handleClient(conn net.Conn) {
 			fmt.Println(errorx.Wrap(e).Error())
 			return
 		}
-		fmt.Println("receive from client:", string(oneRead))
+		fmt.Println(fmt.Sprintf("receive from client: %v", oneRead))
 
-		_, err2 := conn.Write([]byte("reply from server"))
+
+		_, err2 := conn.Write(NewByte(1,2,3,4,5,6,7,8,9))
 
 		if err2 != nil {
 			fmt.Println(err2.Error())
@@ -67,4 +68,10 @@ func readOnce(reader io.Reader) ([]byte, error) {
 	}
 
 	return buffer[0:n], nil
+}
+
+func NewByte(byts ...byte) []byte {
+	var rs = make([]byte, 0 , 512)
+	rs = append(rs, byts...)
+	return rs
 }

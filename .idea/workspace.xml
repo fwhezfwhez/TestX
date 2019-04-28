@@ -62,7 +62,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="29" />
-          <entry key="go" value="50599" />
+          <entry key="go" value="50813" />
           <entry key="md" value="299" />
           <entry key="proto" value="516" />
           <entry key="toml" value="20" />
@@ -71,7 +71,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="50599" />
+          <entry key="Go" value="50813" />
           <entry key="PLAIN_TEXT" value="874" />
         </counts>
       </usages-collector>
@@ -86,20 +86,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="322">
+              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            <state relative-caret-position="754">
+              <caret line="37" column="44" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -199,8 +199,8 @@
         <option value="$PROJECT_DIR$/debug/main.go" />
         <option value="$PROJECT_DIR$/test_udp/server/main.go" />
         <option value="$PROJECT_DIR$/test_udp/client/main.go" />
-        <option value="$PROJECT_DIR$/test_tcp/basic/server/main.go" />
         <option value="$PROJECT_DIR$/test_tcp/basic/client/main.go" />
+        <option value="$PROJECT_DIR$/test_tcp/basic/server/main.go" />
       </list>
     </option>
   </component>
@@ -857,17 +857,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
+    <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="754">
+          <caret line="37" column="44" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
+    <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="322">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
         </state>
       </provider>
     </entry>
