@@ -1,15 +1,18 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type User struct {
 	Username string
 }
 
 func main() {
-fmt.Println(fmt.Sprintf("%x" ,'元'))
+	var user1  = &User{"ft"}
+	var user2 = *user1
+	fmt.Println(user2.Username)
+	user2.Username = "ft2"
+	fmt.Println(user1.Username)
+
 }
 func B(f func()) {}
 

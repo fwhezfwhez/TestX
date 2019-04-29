@@ -26,6 +26,8 @@ func main() {
 			//simple write
 			conn.WriteTo([]byte("Hello,I am server"), addr)
 			conn.WriteTo([]byte("Hello,I am server2"), addr)
+			conn.WriteTo([]byte("Hello,I am server3"), addr)
+
 			continue
 		}
 	}(conn)

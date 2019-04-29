@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/fwhezfwhez/errorx"
-	"io"
 	"net"
 )
 
@@ -16,10 +15,11 @@ func main() {
 	}
 	defer conn.Close()
 
+	go Receive(conn)
 	go func() {
 		for {
 			select {
-			case tmp := <- Receive(conn):
+			case tmp := <-receive:
 				fmt.Println("receive from server:", string(tmp))
 			}
 		}
@@ -27,29 +27,17 @@ func main() {
 
 	//simple write
 	conn.Write([]byte("Hello from client1"))
-	conn.Write([]byte("Hello from client2"))
-	conn.Write([]byte("Hello from client3"))
 
 	select {}
 }
 
-func Receive(conn net.Conn) <-chan []byte {
+func Receive(conn net.Conn) {
 	var buffer = make([]byte, 500, 500)
-	var result = make([]byte, 0, 500)
 	for {
 		n, e := conn.Read(buffer)
 		if e != nil {
 			panic(e)
 		}
-		result = append(result, buffer[0:n]...)
-		if e == io.EOF {
-			break
-		}
-
-		if n < 500 {
-			break
-		}
+		receive <- buffer[0:n]
 	}
-	receive <- result
-	return receive
 }
