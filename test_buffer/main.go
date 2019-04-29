@@ -7,9 +7,33 @@ import (
 
 func main() {
 	// TestBuffer()
-	TestReadPart()
+	// TestReadPart()
+	TestReadSameBytes()
 }
+func TestReadSameBytes(){
+	var buffer = make([]byte,512,512)
 
+	var reader = bytes.NewReader(newByte(1,2,3,4,5,6,7,8))
+	reader.Read(buffer)
+	fmt.Println(buffer)
+
+	reader = bytes.NewReader(newByte(1,2,3,4,5,6,7,8))
+	reader.Read(buffer)
+	fmt.Println(buffer)
+
+	reader = bytes.NewReader(newByte(1,2,3,4,5,6,7,8))
+	reader.Read(buffer)
+	fmt.Println(buffer)
+
+	reader = bytes.NewReader(newByte(1,2,3,4,5,6,7,8))
+	reader.Read(buffer)
+	fmt.Println(buffer)
+}
+func newByte(a ... byte) []byte{
+	var rs = make([]byte,0,512)
+	rs = append(rs, a...)
+	return rs
+}
 // 测试用buffer一次性接受所有数据,不需要预设buffer的初始大小
 func TestBuffer() {
 	var a = make([]byte, 20)
