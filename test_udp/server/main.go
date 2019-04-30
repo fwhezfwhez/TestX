@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"strconv"
 )
 
 func main() {
@@ -20,15 +19,15 @@ func main() {
 		var times int
 		for {
 			// read to EOF
-			message, addr := ReadToEOF(conn)
+			message, _ := ReadToEOF(conn)
 			times ++
 			fmt.Println("times:", times)
 			fmt.Println("receive from client:", string(message))
 			//simple write
-			for i :=0;i<30;i++ {
-				conn.WriteTo([]byte("Hello,I am server" + strconv.Itoa(i)), addr)
-
-			}
+			//for i :=0;i<30;i++ {
+			//	conn.WriteTo([]byte("Hello,I am server" + strconv.Itoa(i)), addr)
+			//
+			//}
 			continue
 		}
 	}(conn)

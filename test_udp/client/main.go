@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/fwhezfwhez/errorx"
 	"net"
+	"strconv"
 )
 
 func main() {
@@ -15,8 +16,11 @@ func main() {
 
 	go Receive(conn)
 
-	//simple write
-	conn.Write([]byte("Hello from client1"))
+	for i :=0;i<30;i++ {
+		conn.Write([]byte("Hello,I am server" + strconv.Itoa(i)))
+
+	}
+	//conn.Write([]byte("Hello from client1"))
 
 	select {}
 }

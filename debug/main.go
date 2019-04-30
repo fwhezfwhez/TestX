@@ -1,18 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type User struct {
 	Username string
+	O        *Object
+}
+type Object struct {
+	ObjectName string
 }
 
+func DoUser(u User) {
+	u.O.ObjectName = "PP"
+}
 func main() {
-	var user1  = &User{"ft"}
-	var user2 = *user1
-	fmt.Println(user2.Username)
-	user2.Username = "ft2"
-	fmt.Println(user1.Username)
+	fmt.Println(f("0d0d"))
+}
 
+func f(str string) string {
+	if len(str) %2 !=0 {
+		panic("str length should %2 =0")
+	}
+	var tmp = make([]string, 0, len(str)/2)
+
+	for i:=0;i<len(str);i++{
+		if i %2 ==1 {
+			tmp = append(tmp, string(str[i-1:i+1]))
+		}
+	}
+	return strings.Join(tmp, "\\x")
 }
 func B(f func()) {}
 
