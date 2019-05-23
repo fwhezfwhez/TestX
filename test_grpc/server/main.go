@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"google.golang.org/grpc"
+	"io"
 	"net"
 	"test_X/test_grpc/pb"
 )
@@ -11,8 +12,26 @@ import (
 type HelloService struct {
 }
 
-func (hs HelloService) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloResponse, error) {
-	return &pb.HelloResponse{Message: fmt.Sprintf("你好，%s", in.Username)}, nil
+func (hs *HelloService) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
+	return &pb.HelloResponse{Message: fmt.Sprintf("你好，%s", req.Username)}, nil
+}
+
+func (hs *HelloService) Chat(conn pb.HelloService_ChatServer)error {
+	for {
+		stream, err:=conn.Recv()
+		if err == io.EOF {
+			return nil
+		}
+		if err != nil {
+			return err
+		}
+		fmt.Println("receive from client:",stream.Stream)
+
+		conn.Send(&pb.ServerStream{
+			Stream: newBytes(1,2,3,4,5),
+		})
+	}
+	return nil
 }
 
 func main() {
@@ -22,6 +41,14 @@ func main() {
 		return
 	}
 	s := grpc.NewServer()
-	pb.RegisterHelloServiceServer(s, HelloService{})
-	s.Serve(lis)
+	pb.RegisterHelloServiceServer(s, &HelloService{})
+	go func() {
+		s.Serve(lis)
+	}()
+	fmt.Println(s.GetServiceInfo())
+	select {}
+}
+
+func newBytes(a ...byte)[]byte{
+	return a
 }

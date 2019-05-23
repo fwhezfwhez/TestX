@@ -102,24 +102,108 @@ func (m *HelloResponse) GetMessage() string {
 	return ""
 }
 
+type ClientStream struct {
+	Stream               []byte   `protobuf:"bytes,1,opt,name=stream,proto3" json:"stream,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ClientStream) Reset()         { *m = ClientStream{} }
+func (m *ClientStream) String() string { return proto.CompactTextString(m) }
+func (*ClientStream) ProtoMessage()    {}
+func (*ClientStream) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61ef911816e0a8ce, []int{2}
+}
+
+func (m *ClientStream) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ClientStream.Unmarshal(m, b)
+}
+func (m *ClientStream) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ClientStream.Marshal(b, m, deterministic)
+}
+func (m *ClientStream) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ClientStream.Merge(m, src)
+}
+func (m *ClientStream) XXX_Size() int {
+	return xxx_messageInfo_ClientStream.Size(m)
+}
+func (m *ClientStream) XXX_DiscardUnknown() {
+	xxx_messageInfo_ClientStream.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ClientStream proto.InternalMessageInfo
+
+func (m *ClientStream) GetStream() []byte {
+	if m != nil {
+		return m.Stream
+	}
+	return nil
+}
+
+type ServerStream struct {
+	Stream               []byte   `protobuf:"bytes,1,opt,name=stream,proto3" json:"stream,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ServerStream) Reset()         { *m = ServerStream{} }
+func (m *ServerStream) String() string { return proto.CompactTextString(m) }
+func (*ServerStream) ProtoMessage()    {}
+func (*ServerStream) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61ef911816e0a8ce, []int{3}
+}
+
+func (m *ServerStream) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ServerStream.Unmarshal(m, b)
+}
+func (m *ServerStream) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ServerStream.Marshal(b, m, deterministic)
+}
+func (m *ServerStream) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ServerStream.Merge(m, src)
+}
+func (m *ServerStream) XXX_Size() int {
+	return xxx_messageInfo_ServerStream.Size(m)
+}
+func (m *ServerStream) XXX_DiscardUnknown() {
+	xxx_messageInfo_ServerStream.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ServerStream proto.InternalMessageInfo
+
+func (m *ServerStream) GetStream() []byte {
+	if m != nil {
+		return m.Stream
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*HelloRequest)(nil), "pb.HelloRequest")
 	proto.RegisterType((*HelloResponse)(nil), "pb.HelloResponse")
+	proto.RegisterType((*ClientStream)(nil), "pb.ClientStream")
+	proto.RegisterType((*ServerStream)(nil), "pb.ServerStream")
 }
 
 func init() { proto.RegisterFile("hello.proto", fileDescriptor_61ef911816e0a8ce) }
 
 var fileDescriptor_61ef911816e0a8ce = []byte{
-	// 143 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0xce, 0x48, 0xcd, 0xc9,
-	0xc9, 0xd7, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2a, 0x48, 0x52, 0xd2, 0xe2, 0xe2, 0xf1,
-	0x00, 0x09, 0x05, 0xa5, 0x16, 0x96, 0xa6, 0x16, 0x97, 0x08, 0x49, 0x71, 0x71, 0x94, 0x16, 0xa7,
-	0x16, 0xe5, 0x25, 0xe6, 0xa6, 0x4a, 0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0xc1, 0xf9, 0x4a, 0x9a,
-	0x5c, 0xbc, 0x50, 0xb5, 0xc5, 0x05, 0xf9, 0x79, 0xc5, 0xa9, 0x42, 0x12, 0x5c, 0xec, 0xb9, 0xa9,
-	0xc5, 0xc5, 0x89, 0xe9, 0x30, 0xb5, 0x30, 0xae, 0x91, 0x23, 0xd4, 0xd8, 0xe0, 0xd4, 0xa2, 0xb2,
-	0xcc, 0xe4, 0x54, 0x21, 0x43, 0x2e, 0x8e, 0xe0, 0xc4, 0x4a, 0xb0, 0x90, 0x90, 0x80, 0x5e, 0x41,
-	0x92, 0x1e, 0xb2, 0xa5, 0x52, 0x82, 0x48, 0x22, 0x10, 0xa3, 0x95, 0x18, 0x92, 0xd8, 0xc0, 0x8e,
-	0x34, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0xcc, 0x57, 0x60, 0x49, 0xb3, 0x00, 0x00, 0x00,
+	// 202 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x90, 0xb1, 0x6e, 0x83, 0x30,
+	0x10, 0x86, 0x71, 0x55, 0x51, 0x7a, 0xa5, 0x52, 0xeb, 0xa1, 0x42, 0x4c, 0x95, 0x87, 0x8a, 0x76,
+	0x40, 0x34, 0x79, 0x04, 0x96, 0xcc, 0xf0, 0x04, 0x26, 0x3a, 0x05, 0x24, 0xc0, 0x8e, 0xcf, 0x44,
+	0xca, 0xdb, 0x47, 0x18, 0x88, 0x3c, 0x65, 0xf3, 0xff, 0xe9, 0x1b, 0x3e, 0x1f, 0xbc, 0xb5, 0xd8,
+	0xf7, 0x2a, 0xd7, 0x46, 0x59, 0xc5, 0x9f, 0x74, 0x23, 0xfe, 0x20, 0x3e, 0xcc, 0xa8, 0xc2, 0xf3,
+	0x84, 0x64, 0x79, 0x0a, 0xd1, 0x44, 0x68, 0x46, 0x39, 0x60, 0xc2, 0xbe, 0x59, 0xf6, 0x5a, 0xdd,
+	0xb7, 0xf8, 0x85, 0xf7, 0xd5, 0x25, 0xad, 0x46, 0x42, 0x9e, 0xc0, 0xcb, 0x80, 0x44, 0xf2, 0xb4,
+	0xb9, 0xdb, 0x14, 0x3f, 0x10, 0x97, 0x7d, 0x87, 0xa3, 0xad, 0xad, 0x41, 0x39, 0xf0, 0x2f, 0x08,
+	0xc9, 0xbd, 0x9c, 0x18, 0x57, 0xeb, 0x9a, 0xbd, 0x1a, 0xcd, 0x05, 0xcd, 0x63, 0x6f, 0x47, 0x6b,
+	0xe6, 0x2c, 0x77, 0x47, 0xe4, 0xff, 0x10, 0xd5, 0xf2, 0xea, 0x10, 0xff, 0xc8, 0x75, 0x93, 0xfb,
+	0x9f, 0x48, 0x3f, 0x3d, 0xb2, 0xa4, 0x8a, 0x80, 0x17, 0xf0, 0x5c, 0xb6, 0xd2, 0x2e, 0xba, 0x1f,
+	0x97, 0x3a, 0xe2, 0x67, 0x88, 0x20, 0x63, 0x05, 0x6b, 0x42, 0x77, 0xa6, 0xfd, 0x2d, 0x00, 0x00,
+	0xff, 0xff, 0x00, 0xd2, 0xbe, 0xbb, 0x35, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -135,6 +219,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type HelloServiceClient interface {
 	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
+	Chat(ctx context.Context, opts ...grpc.CallOption) (HelloService_ChatClient, error)
 }
 
 type helloServiceClient struct {
@@ -154,9 +239,41 @@ func (c *helloServiceClient) SayHello(ctx context.Context, in *HelloRequest, opt
 	return out, nil
 }
 
+func (c *helloServiceClient) Chat(ctx context.Context, opts ...grpc.CallOption) (HelloService_ChatClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_HelloService_serviceDesc.Streams[0], "/pb.HelloService/Chat", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &helloServiceChatClient{stream}
+	return x, nil
+}
+
+type HelloService_ChatClient interface {
+	Send(*ClientStream) error
+	Recv() (*ServerStream, error)
+	grpc.ClientStream
+}
+
+type helloServiceChatClient struct {
+	grpc.ClientStream
+}
+
+func (x *helloServiceChatClient) Send(m *ClientStream) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *helloServiceChatClient) Recv() (*ServerStream, error) {
+	m := new(ServerStream)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // HelloServiceServer is the server API for HelloService service.
 type HelloServiceServer interface {
 	SayHello(context.Context, *HelloRequest) (*HelloResponse, error)
+	Chat(HelloService_ChatServer) error
 }
 
 // UnimplementedHelloServiceServer can be embedded to have forward compatible implementations.
@@ -165,6 +282,9 @@ type UnimplementedHelloServiceServer struct {
 
 func (*UnimplementedHelloServiceServer) SayHello(ctx context.Context, req *HelloRequest) (*HelloResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
+}
+func (*UnimplementedHelloServiceServer) Chat(srv HelloService_ChatServer) error {
+	return status.Errorf(codes.Unimplemented, "method Chat not implemented")
 }
 
 func RegisterHelloServiceServer(s *grpc.Server, srv HelloServiceServer) {
@@ -189,6 +309,32 @@ func _HelloService_SayHello_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _HelloService_Chat_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(HelloServiceServer).Chat(&helloServiceChatServer{stream})
+}
+
+type HelloService_ChatServer interface {
+	Send(*ServerStream) error
+	Recv() (*ClientStream, error)
+	grpc.ServerStream
+}
+
+type helloServiceChatServer struct {
+	grpc.ServerStream
+}
+
+func (x *helloServiceChatServer) Send(m *ServerStream) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *helloServiceChatServer) Recv() (*ClientStream, error) {
+	m := new(ClientStream)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _HelloService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "pb.HelloService",
 	HandlerType: (*HelloServiceServer)(nil),
@@ -198,6 +344,13 @@ var _HelloService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _HelloService_SayHello_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Chat",
+			Handler:       _HelloService_Chat_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "hello.proto",
 }

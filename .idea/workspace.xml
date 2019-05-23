@@ -2,39 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e9da86-63e3-4e9d-9e62-b2c42606b0b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_docker_panic/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_volume/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_volume/config/cfg.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_volume/main" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_docker_volume/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/pb/hello.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_memcached/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_mgo/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_micro/model/hello_world.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_nginx/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redis/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redis/.idea/test_redis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redis/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redis/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redis/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_second_kill/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_signal/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_supervisord/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_supervisord/supervisord.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_websocket/realize/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/debug/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_gorm/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_gorm/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_kcp/basic/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_kcp/basic/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_kcp/basic/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_kcp/basic/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_nsq/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_nsq/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_pprof/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_pprof/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_protobuf/Im/helloworld.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_protobuf/Im/helloworld.proto" beforeDir="false" afterPath="$PROJECT_DIR$/test_protobuf/Im/helloworld.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_protobuf/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_protobuf/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_tcp/basic/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/basic/client/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_grpc/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/client/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_grpc/pb/hello.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/pb/hello.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_grpc/pb/hello.proto" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/pb/hello.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/server/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,9 +71,9 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="107" />
-          <entry key="go" value="60147" />
+          <entry key="go" value="60745" />
           <entry key="md" value="299" />
-          <entry key="proto" value="533" />
+          <entry key="proto" value="707" />
           <entry key="toml" value="20" />
           <entry key="txt" value="10" />
           <entry key="yml" value="13" />
@@ -110,8 +81,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="60147" />
-          <entry key="PLAIN_TEXT" value="969" />
+          <entry key="Go" value="60745" />
+          <entry key="PLAIN_TEXT" value="1143" />
           <entry key="YAML" value="13" />
         </counts>
       </usages-collector>
@@ -135,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_grpc/pb/hello.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="1" lean-forward="true" selection-end-line="14" />
+            <state relative-caret-position="442">
+              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -147,17 +118,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_grpc/pb/hello.pb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3458">
-              <caret line="136" column="100" lean-forward="true" selection-start-line="136" selection-start-column="100" selection-end-line="136" selection-end-column="100" />
+            <state relative-caret-position="267">
+              <caret line="228" column="5" selection-start-line="228" selection-start-column="5" selection-end-line="228" selection-end-column="5" />
+              <folding>
+                <element signature="e#85#289#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_grpc/server/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="161">
+              <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
               <folding>
                 <element signature="e#16#65#0" expanded="true" />
               </folding>
@@ -168,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_grpc/client/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="1193">
+              <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
               <folding>
                 <element signature="e#14#56#0" expanded="true" />
               </folding>
@@ -318,8 +292,8 @@
         <option value="$PROJECT_DIR$/test_grpc/pb/hello.pb.go" />
         <option value="$PROJECT_DIR$/test_grpc/main.go" />
         <option value="$PROJECT_DIR$/test_grpc/pb/hello.proto" />
-        <option value="$PROJECT_DIR$/test_grpc/server/main.go" />
         <option value="$PROJECT_DIR$/test_grpc/client/main.go" />
+        <option value="$PROJECT_DIR$/test_grpc/server/main.go" />
       </list>
     </option>
   </component>
@@ -414,7 +388,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github.com/grpc/grpc-go/examples/route_guide" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -556,19 +530,19 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8500882" visible="true" weight="0.2531983" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8500882" visible="true" weight="0.2531983" />
       <window_info id="Structure" order="1" sideWeight="0.14991182" side_tool="true" weight="0.2563966" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78198296" weight="0.24972856" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.78198296" visible="true" weight="0.24972856" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49573562" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4904051" visible="true" weight="0.32790446" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4904051" weight="0.32790446" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21801706" side_tool="true" weight="0.36373508" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32899022" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -927,35 +901,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_grpc/pb/hello.pb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3458">
-          <caret line="136" column="100" lean-forward="true" selection-start-line="136" selection-start-column="100" selection-end-line="136" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_grpc/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="267">
+          <caret line="228" column="5" selection-start-line="228" selection-start-column="5" selection-end-line="228" selection-end-column="5" />
           <folding>
-            <element signature="e#16#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_grpc/client/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#14#56#0" expanded="true" />
+            <element signature="e#85#289#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_grpc/pb/hello.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="1" lean-forward="true" selection-end-line="14" />
+        <state relative-caret-position="442">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_grpc/client/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1193">
+          <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+          <folding>
+            <element signature="e#14#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_grpc/server/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
+          <folding>
+            <element signature="e#16#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

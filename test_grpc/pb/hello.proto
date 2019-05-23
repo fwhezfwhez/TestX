@@ -9,6 +9,14 @@ message HelloResponse {
   string message = 1;
 }
 
+message ClientStream {
+    bytes stream = 1;
+}
+message ServerStream {
+    bytes stream = 1;
+}
 service HelloService {
   rpc SayHello(HelloRequest) returns (HelloResponse){}
+
+  rpc Chat(stream ClientStream) returns (stream ServerStream){}
 }
