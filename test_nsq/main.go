@@ -1,83 +1,95 @@
 package main
 
 import (
+	"fmt"
 	"github.com/nsqio/go-nsq"
 	"log"
+	"runtime"
+	"sync"
 	"time"
-	"fmt"
 )
+
 //handler
 type ConsumerT struct{}
+
+var consumeMessageNumber int
+var l sync.RWMutex
 //处理消息
 func (*ConsumerT) HandleMessage(msg *nsq.Message) error {
 	fmt.Println("receive", msg.NSQDAddress, "message:", string(msg.Body))
+
+	l.Lock()
+	defer l.Unlock()
+	consumeMessageNumber ++
 	return nil
 }
 
 var producer *nsq.Producer
-var con1 *nsq.Consumer
-var con2 *nsq.Consumer
-var nsqdAddrTCP = "localhost:4150" //tcp  used to publish topics and messages
-var nsqdAddrHTTP = "localhost:4151" //http
-var nsqAdminAddr = "localhost:4171" //http
-var nsqlookupdAddr = "localhost:4161" //http used to receive messages and topics by consumers
-func init(){
-	log.SetFlags(log.Llongfile|log.LstdFlags)
+var consumers []*nsq.Consumer
+
+var conf *nsq.Config
+var nsqdAddrTCP = "localhost:4150"    // tcp  used to publish topics and messages
+var nsqdAddrHTTP = "localhost:4151"   // http publish topics,not exampled
+var nsqAdminAddr = "localhost:4171"   // backend ui
+var nsqlookupdAddr = "localhost:4161" // help consumer find topics
+func init() {
+	log.SetFlags(log.Llongfile | log.LstdFlags)
 	//init a producer
 	var er error
-	config := nsq.NewConfig()
-	producer,er =nsq.NewProducer(nsqdAddrTCP,config)
-	if er!=nil{
+	conf = nsq.NewConfig()
+	producer, er = nsq.NewProducer(nsqdAddrTCP, conf)
+	if er != nil {
 		log.Println(er.Error())
 		return
 	}
-	er=producer.Ping()
-	if er!=nil{
+	er = producer.Ping()
+	if er != nil {
 		log.Println(er.Error())
 		return
 	}
-
-
-	//init consumer
-	config.LookupdPollInterval = 5*time.Second
-	con1,er = nsq.NewConsumer("go-nsq_testcase","channel_1",config)
-	if er!=nil{
-		log.Println(er.Error())
-		return
-	}
-	con1.SetLogger(nil, 0)        //屏蔽系统日志
-	con1.AddHandler(&ConsumerT{}) // 添加消费者接口
-
-	con2,er = nsq.NewConsumer("go-nsq_testcase","channel_1",config)
-	if er!=nil{
-		log.Println(er.Error())
-		return
-	}
-	con2.SetLogger(nil, 0)        //屏蔽系统日志
-	con2.AddHandler(&ConsumerT{}) // 添加消费者接口
-
-
+	//
+	////init consumer
+	conf.LookupdPollInterval = 5 * time.Second
 }
 func main() {
-	go func(){
-		if err := con1.ConnectToNSQLookupd(nsqlookupdAddr); err != nil {
-			panic(err)
+	defer func(){
+		producer.Stop()
+		for i,_:=range consumers {
+			consumers[i].Stop()
 		}
-		if err := con2.ConnectToNSQLookupd(nsqlookupdAddr); err != nil {
-			panic(err)
+	}()
+	runtime.GOMAXPROCS(runtime.NumCPU())
+	// 创建100个消费者
+	consumers = make([]*nsq.Consumer, 100)
+	var e error
+	for i, _ := range consumers {
+		consumers[i], e = nsq.NewConsumer("go-nsq_testcase", "channel_1", conf)
+		if e != nil {
+			log.Println(e.Error())
+			return
 		}
-	}()	// publish topic and 2 messages
-	er:=producer.Publish("go-nsq_testcase",[]byte("hello,everyone"))
-	if er!=nil{
-		log.Println(er.Error())
-		return
-	}
-	er=producer.Publish("go-nsq_testcase",[]byte("hello,everyone2"))
-	if er!=nil{
-		log.Println(er.Error())
-		return
+		consumers[i].SetLogger(nil, 0)
+		consumers[i].AddHandler(&ConsumerT{}) // 添加消费者接口
+
+		if e = consumers[i].ConnectToNSQLookupd(nsqlookupdAddr);e!=nil {
+			log.Println(e)
+			return
+		}
+
 	}
 
-   time.Sleep(5*time.Second)
+	// 并发发布3000个消息
+	for i := 0; i < 3000; i++ {
+		go func(i int) {
+			er := producer.Publish("go-nsq_testcase", []byte(fmt.Sprintf("hello,everyone_%d", i)))
+			if er != nil {
+				log.Println(er.Error())
+				return
+			}
+		}(i)
+	}
 
+	time.Sleep(20 * time.Second)
+	fmt.Println(consumeMessageNumber)
+	select {}
 }

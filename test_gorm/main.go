@@ -12,7 +12,7 @@ type TestGorm struct {
 	Id        int     `gorm:"column:id"`
 	Username  string  `gorm:"column:username;default:"`
 	State     int     `gorm:"column:state;default:"`
-	CreatedAt string  `gorm:"column:created_at"`
+	CreatedAt string  `gorm:"column:created_at;default:"`
 	Money     float64 `gorm:"column:money"`
 }
 
@@ -72,9 +72,20 @@ func main() {
 	//fmt.Println(tg2)
 	//db.Model(&TestGorm{}).Where("id >1").Exec("update test_gorm set state = state + 1")
 	//db.Model(&TestGorm{}).Where("id >1").Delete(&TestGorm{})
-	var t1s []TestGorm
-	if e:=db.Model(&TestGorm{}).Raw("select * from test_gorm").Where("1=?",1).Scan(&t1s).Error;e!=nil {
-		panic(e)
+	//var t1s []TestGorm
+	//if e:=db.Model(&TestGorm{}).Raw("select * from test_gorm").Where("1=?",1).Scan(&t1s).Error;e!=nil {
+	//	panic(e)
+	//}
+	//fmt.Println(t1s)
+	//var tx = db.Begin()
+	//if e:=tx.Model(&TestGorm{}).Save(&TestGorm{Username:"ftf"}).Error;e!=nil {
+	//	panic(e)
+	//}
+	//tx.Commit()
+	if e:=db.Exec(
+		"insert into test_gorm(username) values('ftd');" +
+			"insert into test_gorm(username) values('ftq');").Error;e!=nil {
+				panic(e)
 	}
-	fmt.Println(t1s)
+
 }

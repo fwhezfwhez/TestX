@@ -31,7 +31,11 @@ func main() {
 					break
 				}
 
-				fmt.Println("receive from client:", buffer[:n])
+				// 开启协程处理客户端请求，防止一条请求未处理完时，另一条请求阻塞
+				go func () {
+					fmt.Println("receive from client:", buffer[:n])
+					conn.Write([]byte("你好"))
+				}()
 			}
 		}(conn)
 	}

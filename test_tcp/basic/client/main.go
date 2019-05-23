@@ -36,6 +36,8 @@ func main() {
 	}()
 
 	conn.Write([]byte(NewByte(1,2,3,4,5,6)))
+	conn.Write([]byte(NewByte(1,2,3,4,5,6)))
+	conn.Write([]byte(NewByte(1,2,3,4,5,6)))
 
 	select {}
 }
