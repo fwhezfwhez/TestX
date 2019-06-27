@@ -9,6 +9,9 @@ Press CTRL+C to quit ...
 [0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
 [0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
 [0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
-[0;36minfo:[0m found 56 pages 
-[0;36minfo:[0m found 58 asset files 
-^C
+[0;36minfo:[0m found 63 pages 
+[0;36minfo:[0m found 69 asset files 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 11.1s ! 
+
+Starting server ...
+Serving book on http://localhost:4000

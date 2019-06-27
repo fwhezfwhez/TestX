@@ -16,7 +16,7 @@ type Servers struct {
 
 type server struct {
 	ServerName string `xml:"serverName"`
-	ServerIP   string `xml:"serverIP"`
+	ServerIP   string `xml:"serverIP,CDATA"`
 }
 
 

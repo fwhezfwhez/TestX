@@ -1,14 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	var m = []int{1,2,3}
-	f := func(){
-		m = append(m, 4)
-	}
-
-	fmt.Println(m)
-	f()
-	fmt.Println(m)
+	t :=time.Now().Add(time.Duration(15) * time.Minute).Add(time.Duration(25) * time.Second).Add(5 * time.Hour)
+	fmt.Println(t)
 }

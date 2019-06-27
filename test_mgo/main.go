@@ -10,6 +10,7 @@ import (
 type Person struct {
 	Name  string
 	Phone string
+	Id    int
 }
 
 func main() {
@@ -24,22 +25,23 @@ func main() {
 	session.SetMode(mgo.Monotonic, true)
 
 	c := session.DB("test").C("people")
-	// Insert(c)
-	// Find(c)
+	Insert(c)
+	Find(c)
 	// Update(c)
 	// First(c)
 	//Delete(c)
 
-	ComplexQuery(c)
+	//ComplexQuery(c)
 }
 
 func Insert(c *mgo.Collection) {
 	// 插入
-	err := c.Insert(&Person{"Ale", "+55 53 8116 9639"},
-		&Person{"Cla", "+55 53 8402 8510"})
+	err := c.Insert(&Person{"Ale", "+55 53 8116 9639", 1},
+		&Person{"Cla", "+55 53 8402 8510",2})
 	if err != nil {
 		log.Fatal(err)
 	}
+
 }
 
 func Find(c *mgo.Collection) {
@@ -66,7 +68,7 @@ func First(c *mgo.Collection) {
 	fmt.Println(result)
 }
 func Update(c *mgo.Collection) {
-	err := c.Update(bson.M{"name": "Ale2"}, &Person{"Ale", "+55 53 8116 9639"})
+	err := c.Update(bson.M{"name": "Ale2"}, &Person{"Ale", "+55 53 8116 9639", 1})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -138,6 +140,7 @@ func ComplexQuery(c *mgo.Collection) {
 	//
 	//$eq  --------  equal  =
 	results = nil
+
 	if e := c.Find(bson.M{"name": bson.M{"$ne": "Cla"}}).All(&results); e != nil {
 		panic(e)
 	}

@@ -24,10 +24,9 @@ func main() {
 	)
 
 	service.Init() // 初始化service
-	micro.RegisterHandler(service.Server(), new(HelloWorld)) // 注册服务
+	micro.RegisterHandler(service.Server(), new(HelloWorld))
 	fmt.Println(service.Options())
 	if err := service.Run(); err != nil {
 		fmt.Println(err)
-	} // 运行服务
-
+	}
 }

@@ -20,9 +20,11 @@ func (hs *HelloService) Chat(conn pb.HelloService_ChatServer)error {
 	for {
 		stream, err:=conn.Recv()
 		if err == io.EOF {
+			fmt.Println("EOF")
 			return nil
 		}
 		if err != nil {
+			fmt.Println(err.Error())
 			return err
 		}
 		fmt.Println("receive from client:",stream.Stream)
@@ -30,6 +32,9 @@ func (hs *HelloService) Chat(conn pb.HelloService_ChatServer)error {
 		conn.Send(&pb.ServerStream{
 			Stream: newBytes(1,2,3,4,5),
 		})
+
+		// 关闭连接
+		// return nil
 	}
 	return nil
 }
@@ -42,6 +47,7 @@ func main() {
 	}
 	s := grpc.NewServer()
 	pb.RegisterHelloServiceServer(s, &HelloService{})
+
 	go func() {
 		s.Serve(lis)
 	}()

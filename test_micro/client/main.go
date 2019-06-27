@@ -18,7 +18,7 @@ func main() {
 
 	service.Init()
 
-	greeter := hello_world.NewHelloWorldClient("hello_world", service.Client()) // 创建服务hello_world的client对象, 以便调用其中定义的RPC方法'Hello'
+	greeter := hello_world.NewHelloWorldService("hello_world", service.Client()) // 创建服务hello_world的client对象, 以便调用其中定义的RPC方法'Hello'
 
 	rsp, err := greeter.Hello(context.TODO(), &hello_world.HelloRequest{Name: "Alice"}) // 传入HelloWorldRequest对象作为调用RPC方法的参数'Hello'
 	if err != nil {

@@ -23,7 +23,6 @@ func main() {
 		WriteTimeout:   10 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-
 	go func() {
 		log.Println(s.ListenAndServe())
 	}()

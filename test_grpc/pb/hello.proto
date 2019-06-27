@@ -1,3 +1,5 @@
+// How to generate hello.proto to go file:
+//   protoc --go_out=plugins=grpc:. hello.proto
 syntax = "proto3";
 package pb;
 

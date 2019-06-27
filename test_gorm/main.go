@@ -39,14 +39,13 @@ func (r TestGorm2) TableName2() string {
 
 func main() {
 
-
 	db, err := gorm.Open("postgres",
-		fmt.Sprintf("host=%s user=%s dbname=%s sslmode=%s password=%s",
+		fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=%s password=%s",
 			"localhost",
+			"5433",
 			"postgres",
 			"test",
 			"disable",
-
 			"123",
 		),
 	)
@@ -82,10 +81,18 @@ func main() {
 	//	panic(e)
 	//}
 	//tx.Commit()
-	if e:=db.Exec(
-		"insert into test_gorm(username) values('ftd');" +
-			"insert into test_gorm(username) values('ftq');").Error;e!=nil {
-				panic(e)
+	//if e:=db.Model(&TestGorm{}).Create(&TestGorm{
+	//	Id:60,
+	//	Username:"ff",
+	//}).Error;e!=nil{
+	//	panic(e)
+	//}
+	var users []struct {
+		Id       int    `gorm:"id"`
+		Username string `gorm:"username"`
 	}
-
+	if e := db.Raw("select * from user_info").Scan(&users).Error;e!=nil{
+		panic(e)
+	}
+	fmt.Println(users)
 }
