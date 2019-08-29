@@ -2,56 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e9da86-63e3-4e9d-9e62-b2c42606b0b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/debug/tmp/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helloworld/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_base64/main2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_cript/aes-192-cbc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_cript/debug.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_dir/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_etcd/discovery/core/client-side.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_etcd/discovery/core/server-side.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_etcd/discovery/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_etcd/main2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_flag/main2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_folder_copy/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_gotest/x.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_gotest/x_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/pb2/hello.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/pb2/hello.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/pb2/type.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/proto2-case/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/proto2-case/pb/hello.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_grpc/proto2-case/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_input/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_lock/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_practice/main_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redirect/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_redirect/main_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_tcp/basic/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_url_encode/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_yaml/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_practice/10000-number-min-10_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/debug/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/tmp/main1.go" beforeDir="false" afterPath="$PROJECT_DIR$/debug/tmp/main1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_chan/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_chan/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_docker_helloworld/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_docker_helloworld/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_etcd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_etcd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_flag/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_flag/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_gorm/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_gorm/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_goroutine/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_goroutine/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_grpc/client/clientPb/hello.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_grpc/client/clientPb/hello.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_grpc/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_grpc/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_interface/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_interface/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_pprof/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_pprof/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_prof/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_prof/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_signal/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_signal/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_supervisord/stdout.log.0" beforeDir="false" afterPath="$PROJECT_DIR$/test_supervisord/stdout.log.0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_tcp/basic/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_tcp/basic/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_practice/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +50,7 @@
           <entry key="Dockerfile" value="6" />
           <entry key="Makefile" value="2" />
           <entry key="conf" value="2" />
-          <entry key="go" value="991" />
+          <entry key="go" value="993" />
           <entry key="hello_world_proto" value="1" />
           <entry key="json" value="2" />
           <entry key="log" value="3" />
@@ -113,7 +66,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="991" />
+          <entry key="Go" value="993" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="SQL" value="2" />
@@ -124,7 +77,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="107" />
-          <entry key="go" value="75990" />
+          <entry key="go" value="78034" />
           <entry key="md" value="365" />
           <entry key="proto" value="844" />
           <entry key="toml" value="20" />
@@ -135,7 +88,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="75990" />
+          <entry key="Go" value="78034" />
           <entry key="PLAIN_TEXT" value="1346" />
           <entry key="YAML" value="27" />
         </counts>
@@ -143,7 +96,7 @@
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
         <counts>
           <entry key=".append" value="9" />
-          <entry key=".len" value="12" />
+          <entry key=".len" value="17" />
           <entry key=".p" value="2" />
         </counts>
       </usages-collector>
@@ -152,40 +105,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/main.go">
+        <entry file="file://$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1118">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-              <folding>
-                <element signature="e#14#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_micro/client/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/micro/go-micro/micro.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_practice/main_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="338">
+              <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
               <folding>
                 <element signature="e#23#51#0" expanded="true" />
               </folding>
@@ -193,38 +116,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/micro/go-micro/service.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_practice/10000-number-min-10_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/micro/go-micro/options.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../github.com/rs/cors/cors.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="182" column="45" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/go1.9/src/net/http/server.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+            <state relative-caret-position="299">
+              <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+              <folding>
+                <element signature="e#23#72#0" expanded="true" />
+                <element signature="n#!!block;n#GetMin10#0" />
+                <element signature="n#!!block;n#SplitArr#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -279,8 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test_etcd/discovery/core/core.go" />
-        <option value="$PROJECT_DIR$/test_etcd/discovery/core/client-side.go" />
         <option value="$PROJECT_DIR$/test_etcd/main.go" />
         <option value="$PROJECT_DIR$/test_etcd/main2.go" />
         <option value="$PROJECT_DIR$/test_docker_helloworld/app/main.go" />
@@ -330,6 +229,8 @@
         <option value="$PROJECT_DIR$/test_gorm/main.go" />
         <option value="$PROJECT_DIR$/test/main.go" />
         <option value="$PROJECT_DIR$/test_practice/main_test.go" />
+        <option value="$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go" />
+        <option value="$PROJECT_DIR$/test_practice/10000-number-min-10_test.go" />
       </list>
     </option>
   </component>
@@ -416,37 +317,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestQueue in test_X/test_practice">
-    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test_grpc/client/main.go" />
-      <package value="test_X" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go (3)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test/main.go" />
-      <package value="test_X" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test_gorm/main.go" />
-      <package value="test_X" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestQueue in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestGetMinK in test_X/test_practice">
+    <configuration name="TestGenMNumberArr in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/test_practice" />
       <go_parameters value="-i" />
@@ -455,7 +327,43 @@
       <package value="test_X/test_practice" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestQueue$" />
+      <pattern value="^TestGenMNumberArr$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGetMin10NumberFrom10000 in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/test_practice" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test_X/test_practice" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestGetMin10NumberFrom10000$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGetMinK in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/test_practice" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test_X/test_practice" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestGetMinK$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSplitArr in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/test_practice" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test_X/test_practice" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplitArr$" />
       <method v="2" />
     </configuration>
     <configuration name="TestStack in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -471,52 +379,52 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build main.go (3)" />
-      <item itemvalue="Go Build.go build main.go (2)" />
-      <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Test.TestStack in test_X/test_practice" />
-      <item itemvalue="Go Test.TestQueue in test_X/test_practice" />
+      <item itemvalue="Go Test.TestGetMinK in test_X/test_practice" />
+      <item itemvalue="Go Test.TestGenMNumberArr in test_X/test_practice" />
+      <item itemvalue="Go Test.TestSplitArr in test_X/test_practice" />
+      <item itemvalue="Go Test.TestGetMin10NumberFrom10000 in test_X/test_practice" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestQueue in test_X/test_practice" />
+        <item itemvalue="Go Test.TestGetMinK in test_X/test_practice" />
+        <item itemvalue="Go Test.TestSplitArr in test_X/test_practice" />
+        <item itemvalue="Go Test.TestGetMin10NumberFrom10000 in test_X/test_practice" />
+        <item itemvalue="Go Test.TestGenMNumberArr in test_X/test_practice" />
         <item itemvalue="Go Test.TestStack in test_X/test_practice" />
-        <item itemvalue="Go Build.go build main.go (3)" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build main.go (2)" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestStack_in_test_X_test_practice - 2019.08.29 at 14h 24m 55s.xml">
-      <configuration name="TestStack in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 04s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestStack_in_test_X_test_practice - 2019.08.29 at 14h 27m 56s.xml">
-      <configuration name="TestStack in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 08s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 29m 07s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 13s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 34m 40s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 21s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 34m 56s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 29s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 35m 27s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 33s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 36m 27s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 49s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 37m 14s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetMin10NumberFrom10000_in_test_X_test_practice - 2019.08.29 at 16h 08m 22s.xml">
+      <configuration name="TestGetMin10NumberFrom10000 in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 38m 18s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 16h 14m 51s.xml">
+      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQueue_in_test_X_test_practice - 2019.08.29 at 14h 38m 31s.xml">
-      <configuration name="TestQueue in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetMinK_in_test_X_test_practice - 2019.08.29 at 16h 16m 31s.xml">
+      <configuration name="TestGetMinK in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -537,14 +445,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.78198296" visible="true" weight="0.25841478" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78198296" weight="0.25841478" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49573562" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4904051" weight="0.4039088" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4904051" visible="true" weight="0.4039088" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21801706" side_tool="true" weight="0.36373508" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32899022" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -571,13 +479,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_tcp/basic/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1690">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -884,12 +785,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_practice/main_test.go">
+    <entry file="file://$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="338">
+          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
           <folding>
             <element signature="e#23#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_practice/10000-number-min-10_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding>
+            <element signature="e#23#72#0" expanded="true" />
+            <element signature="n#!!block;n#GetMin10#0" />
+            <element signature="n#!!block;n#SplitArr#0" />
           </folding>
         </state>
       </provider>

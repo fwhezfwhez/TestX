@@ -5,7 +5,17 @@ import (
 	"testing"
 )
 
-// 用两个stack，作一个队列
+/*
+
+用两个stack，作一个队列:
+queue = stack1 + stack2
+
+- 入列时，stack1应该满值，stack2为空
+- 出列时，stack2为满值，stack1为空
+
+否则，顺序异常。
+
+*/
 type Queue struct {
 	stack1 *Stack
 	stack2 *Stack
