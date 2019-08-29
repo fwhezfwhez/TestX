@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e9da86-63e3-4e9d-9e62-b2c42606b0b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_practice/10000-number-min-10_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_practice/node-reverse_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_practice/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
           <entry key="Dockerfile" value="6" />
           <entry key="Makefile" value="2" />
           <entry key="conf" value="2" />
-          <entry key="go" value="993" />
+          <entry key="go" value="994" />
           <entry key="hello_world_proto" value="1" />
           <entry key="json" value="2" />
           <entry key="log" value="3" />
@@ -66,7 +65,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="993" />
+          <entry key="Go" value="994" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="SQL" value="2" />
@@ -77,7 +76,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="107" />
-          <entry key="go" value="78034" />
+          <entry key="go" value="80095" />
           <entry key="md" value="365" />
           <entry key="proto" value="844" />
           <entry key="toml" value="20" />
@@ -88,14 +87,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="78034" />
+          <entry key="Go" value="80095" />
           <entry key="PLAIN_TEXT" value="1346" />
           <entry key="YAML" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
         <counts>
-          <entry key=".append" value="9" />
+          <entry key=".append" value="10" />
           <entry key=".len" value="17" />
           <entry key=".p" value="2" />
         </counts>
@@ -116,15 +115,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_practice/10000-number-min-10_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+            <state relative-caret-position="195">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#23#72#0" expanded="true" />
                 <element signature="n#!!block;n#GetMin10#0" />
                 <element signature="n#!!block;n#SplitArr#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_practice/node-reverse_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+              <folding>
+                <element signature="e#23#51#0" expanded="true" />
+                <element signature="n#!!block;n#NewLinkList#0" />
+                <element signature="n#!!block;n#LastNode#0" />
+                <element signature="n#!!block;n#Print#0" />
               </folding>
             </state>
           </provider>
@@ -180,8 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test_etcd/main.go" />
-        <option value="$PROJECT_DIR$/test_etcd/main2.go" />
         <option value="$PROJECT_DIR$/test_docker_helloworld/app/main.go" />
         <option value="$PROJECT_DIR$/test_lock/main.go" />
         <option value="$PROJECT_DIR$/test_base64/main.go" />
@@ -231,6 +243,8 @@
         <option value="$PROJECT_DIR$/test_practice/main_test.go" />
         <option value="$PROJECT_DIR$/test_practice/2-stack-as-queue_test.go" />
         <option value="$PROJECT_DIR$/test_practice/10000-number-min-10_test.go" />
+        <option value="$PROJECT_DIR$/test_practice/node-reverse.go" />
+        <option value="$PROJECT_DIR$/test_practice/node-reverse_test.go" />
       </list>
     </option>
   </component>
@@ -317,31 +331,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestGetMinK in test_X/test_practice">
-    <configuration name="TestGenMNumberArr in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/test_practice" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="test_X/test_practice" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestGenMNumberArr$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestGetMin10NumberFrom10000 in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="test_X" />
-      <working_directory value="$PROJECT_DIR$/test_practice" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="test_X/test_practice" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestGetMin10NumberFrom10000$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestReverseLinkList in test_X/test_practice">
     <configuration name="TestGetMinK in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/test_practice" />
@@ -354,7 +344,7 @@
       <pattern value="^TestGetMinK$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSplitArr in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLastNode in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/test_practice" />
       <go_parameters value="-i" />
@@ -363,10 +353,10 @@
       <package value="test_X/test_practice" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplitArr$" />
+      <pattern value="^TestLastNode$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStack in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLinkListLen in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="test_X" />
       <working_directory value="$PROJECT_DIR$/test_practice" />
       <go_parameters value="-i" />
@@ -375,39 +365,51 @@
       <package value="test_X/test_practice" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStack$" />
+      <pattern value="^TestLinkListLen$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPrint in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/test_practice" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test_X/test_practice" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestPrint$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestReverseLinkList in test_X/test_practice" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="test_X" />
+      <working_directory value="$PROJECT_DIR$/test_practice" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test_X/test_practice" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestReverseLinkList$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestStack in test_X/test_practice" />
       <item itemvalue="Go Test.TestGetMinK in test_X/test_practice" />
-      <item itemvalue="Go Test.TestGenMNumberArr in test_X/test_practice" />
-      <item itemvalue="Go Test.TestSplitArr in test_X/test_practice" />
-      <item itemvalue="Go Test.TestGetMin10NumberFrom10000 in test_X/test_practice" />
+      <item itemvalue="Go Test.TestLastNode in test_X/test_practice" />
+      <item itemvalue="Go Test.TestPrint in test_X/test_practice" />
+      <item itemvalue="Go Test.TestLinkListLen in test_X/test_practice" />
+      <item itemvalue="Go Test.TestReverseLinkList in test_X/test_practice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestReverseLinkList in test_X/test_practice" />
+        <item itemvalue="Go Test.TestLinkListLen in test_X/test_practice" />
+        <item itemvalue="Go Test.TestPrint in test_X/test_practice" />
+        <item itemvalue="Go Test.TestLastNode in test_X/test_practice" />
         <item itemvalue="Go Test.TestGetMinK in test_X/test_practice" />
-        <item itemvalue="Go Test.TestSplitArr in test_X/test_practice" />
-        <item itemvalue="Go Test.TestGetMin10NumberFrom10000 in test_X/test_practice" />
-        <item itemvalue="Go Test.TestGenMNumberArr in test_X/test_practice" />
-        <item itemvalue="Go Test.TestStack in test_X/test_practice" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 04s.xml">
-      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 08s.xml">
-      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 13s.xml">
-      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 21s.xml">
-      <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestSplitArr_in_test_X_test_practice - 2019.08.29 at 15h 37m 29s.xml">
       <configuration name="TestSplitArr in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -425,6 +427,18 @@
     </history-entry>
     <history-entry file="TestGetMinK_in_test_X_test_practice - 2019.08.29 at 16h 16m 31s.xml">
       <configuration name="TestGetMinK in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLastNode_in_test_X_test_practice - 2019.08.29 at 16h 59m 44s.xml">
+      <configuration name="TestLastNode in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestPrint_in_test_X_test_practice - 2019.08.29 at 17h 04m 19s.xml">
+      <configuration name="TestPrint in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLinkListLen_in_test_X_test_practice - 2019.08.29 at 17h 07m 40s.xml">
+      <configuration name="TestLinkListLen in test_X/test_practice" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestReverseLinkList_in_test_X_test_practice - 2019.08.29 at 17h 21m 42s.xml">
+      <configuration name="TestReverseLinkList in test_X/test_practice" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -445,7 +459,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78198296" weight="0.25841478" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78198296" weight="0.28555918" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49573562" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -479,13 +493,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_tcp/basic/client/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_url_encode/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -797,12 +804,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_practice/10000-number-min-10_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+        <state relative-caret-position="195">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
             <element signature="e#23#72#0" expanded="true" />
             <element signature="n#!!block;n#GetMin10#0" />
             <element signature="n#!!block;n#SplitArr#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_practice/node-reverse_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#23#51#0" expanded="true" />
+            <element signature="n#!!block;n#NewLinkList#0" />
+            <element signature="n#!!block;n#LastNode#0" />
+            <element signature="n#!!block;n#Print#0" />
           </folding>
         </state>
       </provider>
