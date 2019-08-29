@@ -1,79 +1,22 @@
 package main
 
 import (
-	"encoding/json"
-	"net/http"
-	"bytes"
+	"crypto/md5"
 	"fmt"
-	"io/ioutil"
+	"strings"
+	//"time"
 )
 
-type Slot struct{
-	SlotId string `json:"slot_id,omitempty"`
-	SlotName string `json:"slot_name,omitempty"`
-}
 func main() {
-
-	////TestAdd()
-	////TestUpdate()
-	////TestQuery()
-	////TestDelete()
-	//_,e :=http.Get("http://localhost:8090/testroutine/")
-	//if e !=nil {
-	//	panic(e)
-	//}
+	//var date = time.Now().Format("2006-01-02")
+	//var gameId = 78
+	//var secret = "E912JE"
+    fmt.Println(fmt.Sprintf("%f", 9.2))
 }
 
-func TestAdd(){
-	slot:= Slot{SlotName:"广告位2"}
-	adddJson,err:=json.Marshal(slot)
-	if err!=nil{
-		panic(err)
-	}
-	resp, err := http.Post("http://10.0.203.92:8080/slot/add", "application/json", bytes.NewReader(adddJson))
-	defer resp.Body.Close()
-	if err!=nil{
-		panic(err)
-	}
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-}
-
-func TestDelete(){
-	slot:= Slot{SlotId:"2"}
-	adddJson,err:=json.Marshal(slot)
-	if err!=nil{
-		panic(err)
-	}
-	resp, err := http.Post("http://10.0.203.92:8080/slot/delete", "application/json", bytes.NewReader(adddJson))
-	defer resp.Body.Close()
-	if err!=nil{
-		panic(err)
-	}
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-}
-
-func TestUpdate(){
-	slot:= Slot{SlotId:"3"}
-	adddJson,err:=json.Marshal(slot)
-	if err!=nil{
-		panic(err)
-	}
-	resp, err := http.Post("http://10.0.203.92:8080/slot/modify", "application/json", bytes.NewReader(adddJson))
-	defer resp.Body.Close()
-	if err!=nil{
-		panic(err)
-	}
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-}
-func TestQuery(){
-	resp, err := http.Get("http://10.0.203.92:8080/slots/list")
-	defer resp.Body.Close()
-	if err!=nil{
-		panic(err)
-	}
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
+func MD5(rawMsg string) string {
+	data := []byte(rawMsg)
+	has := md5.Sum(data)
+	md5str1 := fmt.Sprintf("%x", has)
+	return strings.ToUpper(md5str1)
 }

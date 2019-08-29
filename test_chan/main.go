@@ -15,6 +15,8 @@ import (
 //chan广播关闭，只有用写的那方close才行，读方不让close
 //break 也是能跳出select的，所以for和select同时存在时，一定要记得 break L
 func main() {
+
+    
 	runtime.GOMAXPROCS(10)
 	var c = make(chan int, 0)
 	go routine1(c)

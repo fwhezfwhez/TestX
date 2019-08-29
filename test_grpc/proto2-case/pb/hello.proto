@@ -1,0 +1,22 @@
+syntax = "proto2";
+package pb;
+message HelloRequest{
+    enum MSGID {ID=664;}
+    optional string username = 1;
+}
+
+message HelloResponse{
+    enum MSGID {ID=665;}
+    optional string message = 1;
+}
+
+message ClientStream {
+   optional  bytes stream = 1;
+}
+message ServerStream {
+   optional  bytes stream = 1;
+}
+service HelloService {
+  rpc SayHello(HelloRequest) returns (HelloResponse){}
+  rpc Chat(stream ClientStream) returns (stream ServerStream){}
+}

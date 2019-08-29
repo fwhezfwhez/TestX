@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"runtime/pprof"
+	"sync"
 	"time"
 )
 
@@ -27,6 +28,8 @@ func main() {
 		time.Sleep(1 *time.Second)
 	}
 	fmt.Println(ToOne(1000))
+
+	sync.Map{}
 }
 
 func Add(a,b int) int{

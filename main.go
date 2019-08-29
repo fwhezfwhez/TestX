@@ -22,7 +22,7 @@ type PayParam struct {
 }
 
 func main() {
-	handlePayInfo(`{"appId":"wx290ce4878c94369d","timeStamp":"1527220149312","status":"0","signType":"MD5","package":"prepay_id=wx251149092901085a3d4cea760765861054","callback_url":null,"nonceStr":"1527220149312","paySign":"A8189D733CC9BEBADCA6E0C3551DBB11"}`)
+	// handlePayInfo(`{"appId":"wx290ce4878c94369d","timeStamp":"1527220149312","status":"0","signType":"MD5","package":"prepay_id=wx251149092901085a3d4cea760765861054","callback_url":null,"nonceStr":"1527220149312","paySign":"A8189D733CC9BEBADCA6E0C3551DBB11"}`)
 }
 
 func handlePayInfo(payInfo string) PayParam {

@@ -6,6 +6,7 @@ import (
 )
 
 func main(){
+	panic(1)
 	go func() {
 		r1:= gin.Default()
 		r1.GET("/sayHello/",func(c *gin.Context){

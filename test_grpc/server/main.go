@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc"
 	"io"
 	"net"
-	"test_X/test_grpc/pb"
+	"test_X/test_grpc/pb2"
 )
 
 type HelloService struct {

@@ -42,7 +42,7 @@ func main() {
 	db, err := gorm.Open("postgres",
 		fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=%s password=%s",
 			"localhost",
-			"5433",
+			"5432",
 			"postgres",
 			"test",
 			"disable",
@@ -91,8 +91,19 @@ func main() {
 		Id       int    `gorm:"id"`
 		Username string `gorm:"username"`
 	}
-	if e := db.Raw("select * from user_info").Scan(&users).Error;e!=nil{
+	//if e := db.Raw("select * from user_info").Scan(&users).Error;e!=nil{
+	//	panic(e)
+	//}
+
+	var ts []TestGorm
+	if e:=db.Model(&TestGorm{}).Where("id in (?)", []int{1,2,3,4}).Find(&ts).Error;e!=nil{
+		panic(e)
+	}
+	e:=db.DB().Ping()
+	if e!=nil {
 		panic(e)
 	}
 	fmt.Println(users)
+
+
 }

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	_ "github.com/mkevac/debugcharts"
+	"github.com/golang/protobuf/proto"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
@@ -15,4 +15,6 @@ func main() {
 		log.Println(http.ListenAndServe("localhost:6060", nil))
 	}()
 	<-a
+
+=
 }

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"google.golang.org/grpc"
 	"io"
-	"test_X/test_grpc/client/clientPb"
+	"test_X/test_grpc/pb"
 )
 
 func main() {
@@ -16,9 +16,9 @@ func main() {
 		return
 	}
 	defer conn.Close()
-	c := clientPb.NewHelloServiceClient(conn)
+	c := pb.NewHelloServiceClient(conn)
 	// say hello
-	r, e := c.SayHello(context.Background(), &clientPb.HelloRequest{Username: "ft"})
+	r, e := c.SayHello(context.Background(), &pb.HelloRequest{Username: "ft"})
 	if e != nil {
 		fmt.Println(e.Error())
 		return
@@ -49,7 +49,7 @@ func main() {
 			fmt.Println("receive from server:", stream.Stream)
 		}
 	}()
-	chatClient.Send(&clientPb.ClientStream{
+	chatClient.Send(&pb.ClientStream{
 		Stream: newBytes(10,9,8,7),
 	})
 	select{
