@@ -1,17 +1,8 @@
-Live reload server started on port: 35729
-Press CTRL+C to quit ...
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
-[0;36minfo:[0m 7 plugins are installed 
-[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "highlight"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
-[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
-[0;36minfo:[0m found 87 pages 
-[0;36minfo:[0m found 93 asset files 
-[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 19.4s ! 
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
 
-Starting server ...
-Serving book on http://localhost:4000
+[GIN-debug] GET    /                         --> main.main.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :7111

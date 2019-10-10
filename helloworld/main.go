@@ -1,11 +1,29 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
+	"time"
+)
 
 func main() {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, "hello")
-	})
-	r.Run(":10000")
+	s := &http.Server{
+		Addr:           ":1111",
+		Handler:        r,
+		ReadTimeout:    60 * time.Second,
+		WriteTimeout:   60 * time.Second,
+		MaxHeaderBytes: 1 << 21,
+	}
+
+	go func(){
+		fmt.Println(s.ListenAndServe())
+
+	}()
+	go func() {
+		fmt.Println(s.ListenAndServe())
+	}()
+	select {
+	}
 }

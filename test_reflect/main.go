@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"reflect"
 	"strings"
@@ -25,6 +26,16 @@ func main(){
 
 	r1 := results[0].Interface()
 	fmt.Println(reflect.TypeOf(r1).String())
+
+    // whether retype
+	var a []byte
+	var b json.RawMessage
+	var c []uint8
+	ta := reflect.TypeOf(a)
+	tb := reflect.TypeOf(b)
+	tc := reflect.TypeOf(c)
+	fmt.Println(tb.AssignableTo(ta))
+	fmt.Println(tc.AssignableTo(ta))
 }
 
 

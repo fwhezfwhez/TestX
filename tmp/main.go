@@ -1,13 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var a  =3
-	switch a {
-	case 5:
-		fmt.Println(5)
-	default:
+	var nums = make([]int, 2,10)
+	for i, v := range nums {
+		if i == 0 {
+			nums[i+1]++
+		} else {
+			fmt.Print(v)
+		}
 	}
-	fmt.Println("end")
+	fmt.Println(nums)
 }

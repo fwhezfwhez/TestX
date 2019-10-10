@@ -28,6 +28,7 @@ func main() {
 
 	client := pb.NewRbacServiceClient(rbac)
 
+
 	// 登录 ok
 
 	//reply, er:= client.Login(context.Background(), &pb.LoginReq{Username: "752825581@qq.com",Password:"123456",PlatformId:10000})
