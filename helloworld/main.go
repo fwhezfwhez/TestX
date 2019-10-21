@@ -1,29 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"github.com/gin-gonic/gin"
-	"net/http"
-	"time"
-)
+import "github.com/astaxie/beego/orm"
 
 func main() {
-	r := gin.Default()
-	s := &http.Server{
-		Addr:           ":1111",
-		Handler:        r,
-		ReadTimeout:    60 * time.Second,
-		WriteTimeout:   60 * time.Second,
-		MaxHeaderBytes: 1 << 21,
-	}
 
-	go func(){
-		fmt.Println(s.ListenAndServe())
+  orm.NewOrm()
 
-	}()
-	go func() {
-		fmt.Println(s.ListenAndServe())
-	}()
-	select {
-	}
 }

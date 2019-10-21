@@ -24,7 +24,7 @@ func main() {
 	// encode
 	hello := "hello world"
 	debyte := base64Encode([]byte(hello))
-	fmt.Println(len(debyte))
+	fmt.Println(string(debyte))
 	// decode
 	enbyte, err := base64Decode(debyte)
 	if err != nil {

@@ -9,11 +9,12 @@ import (
 )
 
 type TestGorm struct {
-	Id        int     `gorm:"column:id"`
-	Username  string  `gorm:"column:username;default:"`
-	State     int     `gorm:"column:state;default:"`
-	CreatedAt string  `gorm:"column:created_at;default:"`
-	Money     float64 `gorm:"column:money"`
+	Id        int             `gorm:"column:id"`
+	Username  string          `gorm:"column:username;default:"`
+	State     int             `gorm:"column:state;default:"`
+	CreatedAt string          `gorm:"column:created_at;default:"`
+	Money     float64         `gorm:"column:money"`
+	Kkk       json.RawMessage `gorm:"column:kkk"`
 }
 
 func (r TestGorm) TableName() string {
@@ -87,23 +88,8 @@ func main() {
 	//}).Error;e!=nil{
 	//	panic(e)
 	//}
-	var users []struct {
-		Id       int    `gorm:"id"`
-		Username string `gorm:"username"`
-	}
 	//if e := db.Raw("select * from user_info").Scan(&users).Error;e!=nil{
 	//	panic(e)
 	//}
-
-	var ts []TestGorm
-	if e:=db.Model(&TestGorm{}).Where("id in (?)", []int{1,2,3,4}).Find(&ts).Error;e!=nil{
-		panic(e)
-	}
-	e:=db.DB().Ping()
-	if e!=nil {
-		panic(e)
-	}
-	fmt.Println(users)
-
-
+    fmt.Println(db.Exec("update test_gorm set kkk=?", []byte(`<xx>hello</xx>`)).Error)
 }
